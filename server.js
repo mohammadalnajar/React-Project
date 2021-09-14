@@ -6,10 +6,11 @@ const colors = require('colors');
 const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const authRouter = require('./routes/auth');
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/auth', authRouter);
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
