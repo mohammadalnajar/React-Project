@@ -12,7 +12,7 @@ exports.registerUser = async (req, res) => {
       email,
       hash,
     });
-    res.json({
+    return res.status(200).json({
       firstName,
       lastName,
       email,
@@ -22,7 +22,7 @@ exports.registerUser = async (req, res) => {
       },
     });
   } catch (error) {
-    res.json({
+    return res.status(500).json({
       msg: error,
       status: {
         register: 'Failed to register',
@@ -31,7 +31,43 @@ exports.registerUser = async (req, res) => {
   }
 };
 exports.loginUser = async (req, res) => {
-  res.send('login user');
+  const { email, password } = req.body;
+  try {
+    const foundUser = await User.findOne({ email });
+
+    if (foundUser !== null) {
+      const { hash, firstName, lastName, joinedAt } = foundUser;
+      const correctPass = await bcrypt.compare(password, hash);
+      if (correctPass) {
+        return res.json({
+          firstName,
+          lastName,
+          email,
+          joinedAt,
+          status: {
+            loggedIn: true,
+            msg: 'Success LoggedIn',
+          },
+        });
+      } else {
+        return res.status(400).json({
+          status: { loggedIn: false, msg: 'Username OR Password is incorrect' },
+        });
+      }
+    } else {
+      return res.status(404).json({
+        status: { loggedIn: false, msg: 'Username or Password is incorrect' },
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      msg: error,
+      status: {
+        login: 'Failed to login',
+      },
+    });
+  }
 };
 exports.delUser = async (req, res) => {
   res.send('delete user');
