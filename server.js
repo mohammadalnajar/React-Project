@@ -16,11 +16,14 @@ connectDB();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/auth', authRouter);
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+// Routes =>
+// auth Route
+app.use('/api/auth', authRouter);
 
 // start the app with the static page from the build folder in client side
 if (process.env.NODE_ENV === 'production') {

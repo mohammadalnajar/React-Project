@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  name: {
+  firstName: {
     type: String,
-    required: [true, 'Please add your name'],
+    required: [true, 'Please add your first name'],
+  },
+  lastName: {
+    type: String,
+    required: [true, 'Please add your last name'],
   },
   email: {
     type: String,
@@ -12,6 +16,10 @@ const UserSchema = new mongoose.Schema({
   hash: {
     type: String,
     required: [true, 'Please add a password'],
+  },
+  joinedAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
