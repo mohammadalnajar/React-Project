@@ -6,7 +6,13 @@ const colors = require('colors');
 const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const connectDB = require('./config/db');
+
+// Routes imports
 const authRouter = require('./routes/auth');
+
+// connect to db
+connectDB();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
