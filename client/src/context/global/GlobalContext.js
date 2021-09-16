@@ -4,7 +4,7 @@ import { GlobalReducer } from './GlobalReducer';
 // starting state
 const initialState = {
   user: { name: '', email: '', userRole: '' },
-  status: { loggedIn: false },
+  status: { loggedIn: '' },
 };
 
 export const GlobalContext = createContext(initialState);
@@ -25,19 +25,41 @@ export const GlobalProvider = ({ children }) => {
         body: JSON.stringify(loginUser),
       });
       const info = await response.json();
-      const { firstName, lastName, email, joinedAt, userRole, status } = info;
-      const user = { firstName, lastName, email, joinedAt, userRole };
-      dispatch({
-        type: 'LOGIN',
-        payload: { user, status },
-      });
+      if (info.user) {
+        const { firstName, lastName, email, joinedAt, userRole, status } = info;
+        const user = { firstName, lastName, email, joinedAt, userRole };
+        dispatch({
+          type: 'LOGIN',
+          payload: { user, status },
+        });
+      } else {
+        const { status } = info;
+        console.log(status);
+        dispatch({
+          type: 'ERROR',
+          payload: status,
+        });
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
+  const resetError = () => {
+    dispatch({
+      type: 'ERROR',
+      payload: { loggedIn: '' },
+    });
+  };
   return (
-    <GlobalContext.Provider value={{ loginHandler, user: state.user }}>
+    <GlobalContext.Provider
+      value={{
+        loginHandler,
+        user: state.user,
+        status: state.status,
+        resetError,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

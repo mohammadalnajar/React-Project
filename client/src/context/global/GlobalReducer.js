@@ -6,6 +6,11 @@ export const GlobalReducer = (state, action) => {
         user: action.payload.user,
         status: action.payload.status,
       };
+    case 'ERROR':
+      return {
+        ...state,
+        status: action.payload,
+      };
     default:
       return state;
   }

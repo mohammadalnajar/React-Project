@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
-  CssBaseline,
   Box,
   Avatar,
   Typography,
@@ -11,15 +10,26 @@ import {
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link } from 'react-router-dom';
+import { AlertModal } from './AlertModal';
 
-export const LoginForm = ({ loginHandler, user }) => {
+export const LoginForm = ({ loginHandler, status, resetError }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [openAlertModal, setOpenAlertModal] = useState(false);
+  const handleOpen = () => setOpenAlertModal(true);
+  const handleClose = () => {
+    setOpenAlertModal(false);
+    resetError();
+  };
+  useEffect(() => {
+    if (status.loggedIn === false) {
+      handleOpen();
+    }
+  }, [status]);
 
   return (
     <div>
       <Container component='main' maxWidth='xs'>
-        <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
@@ -36,7 +46,6 @@ export const LoginForm = ({ loginHandler, user }) => {
           </Typography>
           <Box
             component='form'
-            noValidate
             onSubmit={(e) => loginHandler(e, email, password)}
             sx={{ mt: 3 }}
           >
@@ -45,6 +54,7 @@ export const LoginForm = ({ loginHandler, user }) => {
                 <TextField
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
+                  type='email'
                   required
                   fullWidth
                   id='email'
@@ -84,6 +94,11 @@ export const LoginForm = ({ loginHandler, user }) => {
         </Box>
         {/* <Copyright sx={{ mt: 5 }} /> */}
       </Container>
+      <AlertModal
+        open={openAlertModal}
+        handleClose={handleClose}
+        alertMessage={status.msg}
+      />
     </div>
   );
 };
