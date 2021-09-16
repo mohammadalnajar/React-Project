@@ -22,6 +22,8 @@ exports.addDevice = async (req, res) => {
 };
 exports.getDevices = async (req, res) => {
   try {
+    const allDevices = await Device.find();
+    return res.status(200).json(allDevices);
   } catch (error) {
     res.status(500).json({
       status: {
@@ -30,7 +32,6 @@ exports.getDevices = async (req, res) => {
       },
     });
   }
-  res.send('get devices');
 };
 exports.delDevice = async (req, res) => {
   res.send('delete device');
