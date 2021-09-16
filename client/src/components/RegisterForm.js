@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { RegisterDoneModal } from './RegisterDoneModal';
 
@@ -87,6 +87,9 @@ export const RegisterForm = () => {
         <Button variant='primary' type='submit'>
           Submit
         </Button>
+        <p>
+          Have you already an Account? <Link to='/login'> log in </Link>
+        </p>
       </Form>
 
       <RegisterDoneModal
