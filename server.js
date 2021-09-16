@@ -22,8 +22,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Routes =>
-// auth Route
 
+// auth Route
 app.use('/api/auth', authRouter);
 // devices Route
 app.use('/api/devices', devicesRouter);

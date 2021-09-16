@@ -13,6 +13,10 @@ const DeviceSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add device type'],
   },
+  price: {
+    type: Number,
+    required: [true, 'please add a price for the device'],
+  },
   specs: {
     releaseDate: {
       type: Date,

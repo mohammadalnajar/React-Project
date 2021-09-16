@@ -17,6 +17,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add a password'],
   },
+  userRole: {
+    type: String,
+    default: 'member',
+  },
   joinedAt: {
     type: Date,
     default: Date.now,

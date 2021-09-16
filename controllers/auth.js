@@ -2,7 +2,7 @@ const User = require('../models/Users');
 const bcrypt = require('bcrypt');
 
 exports.registerUser = async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { firstName, lastName, email, password, userRole } = req.body;
   const salt = 10;
   try {
     const hash = await bcrypt.hash(password, salt);
@@ -11,11 +11,13 @@ exports.registerUser = async (req, res) => {
       lastName,
       email,
       hash,
+      userRole,
     });
     return res.status(200).json({
       firstName,
       lastName,
       email,
+      userRole: registeredUser.userRole,
       joinedAt: registeredUser.joinedAt,
       status: {
         register: 'Success registered',
