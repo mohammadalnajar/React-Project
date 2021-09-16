@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
-import { GlobalContext } from '../context/global/GlobalContext';
 import { RegisterDoneModal } from './RegisterDoneModal';
 
 export const RegisterForm = () => {
@@ -47,6 +46,7 @@ export const RegisterForm = () => {
             type='text'
             placeholder='Enter Your first name'
             value={fName}
+            required
           />
         </Form.Group>
         <Form.Group className='mb-3'>
@@ -56,6 +56,7 @@ export const RegisterForm = () => {
             type='text'
             placeholder='Enter Your last name'
             value={lName}
+            required
           />
         </Form.Group>
         <Form.Group className='mb-3'>
@@ -65,6 +66,7 @@ export const RegisterForm = () => {
             type='email'
             placeholder='Enter email'
             value={email}
+            required
           />
           <Form.Text className='text-muted'>
             We'll never share your email with anyone else.
@@ -78,6 +80,7 @@ export const RegisterForm = () => {
             type='password'
             placeholder='Password'
             value={password}
+            required
           />
         </Form.Group>
 
