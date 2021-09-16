@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import { RegisterPage } from './pages/RegisterPage';
 import { GlobalProvider } from './context/global/GlobalContext';
-import { LoginPage } from './components/LoginPage';
+import { LoginPage } from './pages/LoginPage';
 function App() {
   return (
     <>
