@@ -15,7 +15,7 @@ export const GlobalProvider = ({ children }) => {
   // login handler
   const loginHandler = async (e, email, password) => {
     e.preventDefault();
-    resetUser();
+    logoutHandler();
     const loginUser = { email, password };
     try {
       const response = await fetch('/api/auth/login', {
@@ -33,6 +33,8 @@ export const GlobalProvider = ({ children }) => {
           type: 'LOGIN',
           payload: { user, status },
         });
+        // storing user in local storage
+        localStorage.setItem('user', JSON.stringify(info));
       } else {
         const { status } = info;
         console.log(status, 3);
@@ -52,11 +54,22 @@ export const GlobalProvider = ({ children }) => {
       payload: { loggedIn: '' },
     });
   };
-  const resetUser = () => {
+  const logoutHandler = () => {
     dispatch({
-      type: 'LOGIN',
+      type: 'LOGOUT',
       payload: initialState,
     });
+    localStorage.clear();
+  };
+  const setUser = (info) => {
+    if (info.email) {
+      const { firstName, lastName, email, joinedAt, userRole, status } = info;
+      const user = { firstName, lastName, email, joinedAt, userRole };
+      dispatch({
+        type: 'LOGIN',
+        payload: { user, status },
+      });
+    }
   };
   return (
     <GlobalContext.Provider
@@ -65,6 +78,7 @@ export const GlobalProvider = ({ children }) => {
         user: state.user,
         status: state.status,
         resetError,
+        setUser,
       }}
     >
       {children}
