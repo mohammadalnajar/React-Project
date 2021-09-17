@@ -38,7 +38,7 @@ exports.loginUser = async (req, res) => {
     const foundUser = await User.findOne({ email });
 
     if (foundUser !== null) {
-      const { hash, firstName, lastName, joinedAt } = foundUser;
+      const { hash, firstName, lastName, joinedAt, userRole } = foundUser;
       const correctPass = await bcrypt.compare(password, hash);
       if (correctPass) {
         return res.json({
@@ -46,6 +46,7 @@ exports.loginUser = async (req, res) => {
           lastName,
           email,
           joinedAt,
+          userRole,
           status: {
             loggedIn: true,
             msg: 'Success LoggedIn',
