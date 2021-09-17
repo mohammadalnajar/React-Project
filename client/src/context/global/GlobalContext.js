@@ -15,6 +15,7 @@ export const GlobalProvider = ({ children }) => {
   // login handler
   const loginHandler = async (e, email, password) => {
     e.preventDefault();
+    resetUser();
     const loginUser = { email, password };
     try {
       const response = await fetch('/api/auth/login', {
@@ -25,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
         body: JSON.stringify(loginUser),
       });
       const info = await response.json();
-      if (info.user) {
+      if (info.email) {
         const { firstName, lastName, email, joinedAt, userRole, status } = info;
         const user = { firstName, lastName, email, joinedAt, userRole };
         dispatch({
@@ -34,7 +35,7 @@ export const GlobalProvider = ({ children }) => {
         });
       } else {
         const { status } = info;
-        console.log(status);
+        console.log(status, 3);
         dispatch({
           type: 'ERROR',
           payload: status,
@@ -49,6 +50,12 @@ export const GlobalProvider = ({ children }) => {
     dispatch({
       type: 'ERROR',
       payload: { loggedIn: '' },
+    });
+  };
+  const resetUser = () => {
+    dispatch({
+      type: 'LOGIN',
+      payload: initialState,
     });
   };
   return (
