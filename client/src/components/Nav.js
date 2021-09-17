@@ -3,6 +3,8 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
+import { ShoppingCart } from './ShoppingCart';
+
 export const Nav = (props) => {
   const useStyles = makeStyles({
     nav: {
@@ -19,13 +21,30 @@ export const Nav = (props) => {
     <div>
       <nav className={classes.nav}>
         <Grid container alignItems='center'>
-          <Grid xs={3}>Home</Grid>
-          <Grid xs={3}>Contact</Grid>
-          <Grid xs={3}>Shop</Grid>
-          <Grid xs={3}>
-            <Button variant='primary' startIcon={<LoginIcon />}>
-              Log in
-            </Button>
+          <Grid container justifyContent='center' item xs={2}>
+            Home
+          </Grid>
+          <Grid container justifyContent='center' item xs={2}>
+            Contact
+          </Grid>
+          <Grid container justifyContent='center' item xs={2}>
+            Shop
+          </Grid>
+          <Grid item container xs={6} justifyContent='flex-end'>
+            <Grid item xs={6} container justifyContent='flex-end'>
+              <Button variant='primary' startIcon={<LoginIcon />}>
+                Log out
+              </Button>
+            </Grid>
+            <Grid
+              item
+              container
+              justifyContent='flex-end'
+              className='p-2'
+              xs={2}
+            >
+              <ShoppingCart />
+            </Grid>
           </Grid>
         </Grid>
       </nav>
