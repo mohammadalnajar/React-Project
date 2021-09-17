@@ -12,6 +12,11 @@ export const GlobalReducer = (state, action) => {
         user: action.payload.user,
         status: action.payload.status,
       };
+    case 'SET_DEVICES':
+      return {
+        ...state,
+        devices: action.payload,
+      };
     case 'ERROR':
       return {
         ...state,
