@@ -19,29 +19,30 @@ export const DeviceItem = ({ device }) => {
       alignItems: 'center',
     },
     deviceContainer: {
-      border: '2px solid black',
-      margin: '10px',
-      flexBasis: '25%',
+      borderRadius: '5px',
+      backgroundColor: '#EEEEEE',
     },
   });
   const classes = useStyles();
   return (
-    <Grid item xs={3} className={`${classes.deviceContainer} m-1`}>
-      <Grid container>
-        <Grid item xs={12} container justifyContent='center'>
-          <img src={iphone13proImage} alt='not found' width='100px' />
-        </Grid>
-        <Grid justifyContent='center' container item>
-          <Grid justifyContent='center' container item xs={8}>
-            {device.name}
+    <Grid item xs={4}>
+      <Grid className={`${classes.deviceContainer} m-2  p-2`}>
+        <Grid container alignItems='stretch'>
+          <Grid item xs={12} container justifyContent='center'>
+            <img src={iphone13proImage} alt='not found' width='100px' />
           </Grid>
-          <Grid item xs={4}>
-            {device.specs.memory.storage[0]}
+          <Grid justifyContent='center' container item>
+            <Grid justifyContent='center' container item xs={8}>
+              {device.name}
+            </Grid>
+            <Grid item xs={4}>
+              {device.specs.memory.storage[0]}
+            </Grid>
+            <Grid item>${device.price}-</Grid>
           </Grid>
-          <Grid item>${device.price}-</Grid>
-        </Grid>
-        <Grid justifyContent='flex-end' className={'m-2'} container item>
-          <AddToCart />
+          <Grid justifyContent='flex-end' className={'m-2'} container item>
+            <AddToCart />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
