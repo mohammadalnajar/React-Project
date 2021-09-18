@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
@@ -24,17 +24,15 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
     const filteredDevices = devicesGlobal.filter((device) =>
       checked.includes(device.brand)
     );
-    console.log(filteredDevices, 'filteredDevices');
     setDevices(filteredDevices);
     if (checked.length < 1) {
       setDevices(devicesGlobal);
     }
-  }, [checked]);
+  }, [checked, setDevices, devicesGlobal]);
   return (
     <>
       <FormControl
         required
-        // error={error}
         component='fieldset'
         sx={{ m: 3 }}
         variant='standard'
