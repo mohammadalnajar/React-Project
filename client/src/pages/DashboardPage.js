@@ -8,10 +8,11 @@ export const DashboardPage = () => {
   useEffect(() => {
     getDevices();
   }, []);
+  console.log(devices, 'devices in dash');
   return (
     <>
       <Nav />
-      <ShopPage devices={devices} />
+      <ShopPage devicesGlobal={devices} />
     </>
   );
 };

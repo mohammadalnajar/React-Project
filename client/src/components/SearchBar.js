@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { Grid } from '@material-ui/core';
-export const SearchBar = ({ devices }) => {
+
+export const SearchBar = ({ devices, setDevices, devicesGlobal }) => {
   const [value, setValue] = useState('');
   const [inputValue, setInputValue] = useState('');
+  const filterDevices = useCallback(() => {
+    const filteredDevices = devicesGlobal.filter(
+      (device) =>
+        device.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1
+    );
+    setDevices(filteredDevices);
+  }, [inputValue, devicesGlobal, setDevices]);
   useEffect(() => {
-    console.log(inputValue);
-  }, [value, inputValue]);
+    filterDevices();
+  }, [filterDevices]);
   return (
     <Grid item xs={6} className='my-3 mx-2'>
       <div>
@@ -28,23 +36,6 @@ export const SearchBar = ({ devices }) => {
           )}
         />
       </div>
-      {/* <Autocomplete
-        freeSolo
-        disableClearable
-        options={devices.map((device) => device.name)}
-        renderInput={(params) => (
-          <TextField
-            onChange={(e) => setInput(e.target.value)}
-            value={input}
-            {...params}
-            label='Search input'
-            InputProps={{
-              ...params.InputProps,
-              type: 'search',
-            }}
-          />
-        )}
-      /> */}
     </Grid>
   );
 };
