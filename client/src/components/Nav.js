@@ -4,12 +4,20 @@ import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import { ShoppingCart } from './ShoppingCart';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 export const Nav = (props) => {
+  console.log('in the nav');
   const useStyles = makeStyles({
     nav: {
-      backgroundColor: 'red',
+      // backgroundColor: 'red',
       //   color: (props) => props.color,
+    },
+    fixed: {
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      width: '95vw',
     },
     dFlex: {
       display: 'flex',

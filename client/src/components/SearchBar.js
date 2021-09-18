@@ -6,6 +6,7 @@ import { Grid } from '@material-ui/core';
 export const SearchBar = ({ devices, setDevices, devicesGlobal }) => {
   const [value, setValue] = useState('');
   const [inputValue, setInputValue] = useState('');
+
   const filterDevices = useCallback(() => {
     const filteredDevices = devicesGlobal.filter(
       (device) =>
@@ -13,9 +14,11 @@ export const SearchBar = ({ devices, setDevices, devicesGlobal }) => {
     );
     setDevices(filteredDevices);
   }, [inputValue, devicesGlobal, setDevices]);
+
   useEffect(() => {
     filterDevices();
   }, [filterDevices]);
+
   return (
     <Grid item xs={6} className='my-3 mx-2'>
       <div>
