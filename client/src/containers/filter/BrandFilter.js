@@ -31,12 +31,7 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
   }, [checked, setDevices, devicesGlobal]);
   return (
     <>
-      <FormControl
-        required
-        component='fieldset'
-        sx={{ m: 3 }}
-        variant='standard'
-      >
+      <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
         <FormLabel>Brand:</FormLabel>
         <FormGroup>
           {brands.length > 0 &&
@@ -45,6 +40,12 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
                 key={brand}
                 control={
                   <Checkbox
+                    sx={{
+                      color: '#c5c5c5',
+                      '&.Mui-checked': {
+                        color: '#50A0DF',
+                      },
+                    }}
                     size='small'
                     onChange={handleChange}
                     name={brand}

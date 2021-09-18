@@ -24,7 +24,6 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
   };
 
   useEffect(() => {
-    console.log(checked);
     const filteredDevices = devicesGlobal.filter((device) =>
       checked.includes(device.specs.platform.OS)
     );
@@ -35,12 +34,7 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
   }, [checked, setDevices, devicesGlobal]);
   return (
     <>
-      <FormControl
-        required
-        component='fieldset'
-        sx={{ m: 3 }}
-        variant='standard'
-      >
+      <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
         <FormLabel>OS:</FormLabel>
         <FormGroup>
           {operationSystems.length > 0 &&
@@ -49,6 +43,12 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
                 key={os}
                 control={
                   <Checkbox
+                    sx={{
+                      color: '#c5c5c5',
+                      '&.Mui-checked': {
+                        color: '#50A0DF',
+                      },
+                    }}
                     size='small'
                     onChange={handleChange}
                     name={os}
