@@ -11,7 +11,7 @@ export const ShoppingCartList = () => {
       return item.price * item.count;
     })
     .reduce((a, b) => a + b);
-  console.log(totalPrice);
+
   return (
     <>
       <Grid container>

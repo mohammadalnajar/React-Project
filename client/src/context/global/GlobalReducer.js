@@ -34,6 +34,13 @@ export const GlobalReducer = (state, action) => {
         ...state,
         shoppingCartItems: state.shoppingCartItems,
       };
+    case 'DEL_ITEM_CART':
+      return {
+        ...state,
+        shoppingCartItems: state.shoppingCartItems.filter(
+          (item) => item._id !== action.payload._id
+        ),
+      };
     case 'ERROR':
       return {
         ...state,

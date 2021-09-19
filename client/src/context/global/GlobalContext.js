@@ -95,6 +95,13 @@ export const GlobalProvider = ({ children }) => {
       payload: item,
     });
   };
+  // del item from shopping cart
+  const delItemCart = (item) => {
+    dispatch({
+      type: 'DEL_ITEM_CART',
+      payload: item,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -107,6 +114,7 @@ export const GlobalProvider = ({ children }) => {
         setUser,
         getDevices,
         addItemToCart,
+        delItemCart,
       }}
     >
       {children}
