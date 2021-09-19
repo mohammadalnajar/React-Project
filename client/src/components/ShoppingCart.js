@@ -7,6 +7,7 @@ import { makeStyles } from '@mui/styles';
 import IconButton from '@mui/material/IconButton';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { GlobalContext } from '../context/global/GlobalContext';
+import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
 
 export const ShoppingCart = () => {
   const { shoppingCartItems } = useContext(GlobalContext);
@@ -24,6 +25,7 @@ export const ShoppingCart = () => {
       padding: '0 4px',
     },
   }));
+
   const ShoppingCartTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
@@ -33,19 +35,12 @@ export const ShoppingCart = () => {
       maxWidth: 220,
       fontSize: theme.typography.pxToRem(12),
       border: '1px solid #dadde9',
+      boxShadow: '1px 3px 10px 3px rgba(0, 0, 0,0.2)',
     },
   }));
-  // this for testing purpose
-  const devices = ['iphone', 'samsung', 'motorola'];
+
   return (
-    <ShoppingCartTooltip
-      title={devices.map((d, idx) => (
-        <div key={idx} style={{ color: 'red' }}>
-          {d}
-        </div>
-      ))}
-      placement='bottom-start'
-    >
+    <ShoppingCartTooltip title={<ShoppingCartList />} placement='bottom-start'>
       <IconButton aria-label='cart'>
         <StyledBadge badgeContent={numItemsInCart} color='secondary'>
           <ShoppingCartIcon />

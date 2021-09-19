@@ -19,10 +19,10 @@ export const DeviceItem = ({ device }) => {
             <img src={device.imageUrl} alt='not found' width='100px' />
           </Grid>
           <Grid justifyContent='center' container item>
-            <Grid justifyContent='center' container item xs={8}>
+            <Grid justifyContent='center' container item xs={12}>
               {device.name}
             </Grid>
-            <Grid item xs={4}>
+            <Grid justifyContent='center' container item xs={12}>
               {device.specs.memory.storage[0]}
             </Grid>
             <Grid item>${device.price}-</Grid>
