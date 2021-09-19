@@ -17,6 +17,11 @@ export const GlobalReducer = (state, action) => {
         ...state,
         devices: action.payload,
       };
+    case 'ADD_ITEM_TO_CART':
+      return {
+        ...state,
+        shoppingCartItems: [...state.shoppingCartItems, action.payload],
+      };
     case 'ERROR':
       return {
         ...state,

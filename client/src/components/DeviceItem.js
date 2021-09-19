@@ -28,7 +28,7 @@ export const DeviceItem = ({ device }) => {
             <Grid item>${device.price}-</Grid>
           </Grid>
           <Grid justifyContent='flex-end' className={'m-2'} container item>
-            <AddToCart />
+            <AddToCart device={device} />
           </Grid>
         </Grid>
       </Grid>

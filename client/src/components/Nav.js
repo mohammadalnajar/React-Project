@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import { ShoppingCart } from './ShoppingCart';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 export const Nav = (props) => {
   console.log('in the nav');

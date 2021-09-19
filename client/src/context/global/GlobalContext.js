@@ -87,6 +87,14 @@ export const GlobalProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  // add to shopping cart
+  const addItemToCart = (item) => {
+    dispatch({
+      type: 'ADD_ITEM_TO_CART',
+      payload: item,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -97,6 +105,7 @@ export const GlobalProvider = ({ children }) => {
         resetError,
         setUser,
         getDevices,
+        addItemToCart,
       }}
     >
       {children}
