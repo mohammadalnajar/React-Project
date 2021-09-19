@@ -3,6 +3,7 @@ export const initialState = {
   status: { loggedIn: '' },
   devices: [
     {
+      _id: '',
       name: '',
       brand: '',
       type: '',

@@ -93,6 +93,7 @@ export const GlobalProvider = ({ children }) => {
         loginHandler,
         user: state.user,
         status: state.status,
+        devices: state.devices,
         resetError,
         setUser,
         getDevices,

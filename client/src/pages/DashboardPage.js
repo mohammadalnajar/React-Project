@@ -1,11 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import { Nav } from '../components/Nav';
 import { GlobalContext } from '../context/global/GlobalContext';
+import { ShopPage } from './ShopPage';
 
 export const DashboardPage = () => {
-  const { getDevices } = useContext(GlobalContext);
+  const { getDevices, devices } = useContext(GlobalContext);
   useEffect(() => {
     getDevices();
   }, []);
-  return <Nav />;
+  return (
+    <>
+      <Nav />
+      <ShopPage devicesGlobal={devices} />
+    </>
+  );
 };
