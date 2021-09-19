@@ -7,7 +7,7 @@ export const ShoppingCartItem = ({ item }) => {
   const { delItemCart } = useContext(GlobalContext);
   return (
     <>
-      {item.count > 0 && (
+      {item.quantity > 0 && (
         <Grid item xs={12}>
           <Grid container className='m-2'>
             <Grid container justifyContent='center' item xs={4}>
@@ -22,7 +22,7 @@ export const ShoppingCartItem = ({ item }) => {
                   ${item.price}
                 </Grid>
                 <Grid container item xs={3}>
-                  {item.count}
+                  {item.quantity}
                 </Grid>
                 <Grid container justifyContent='center' item xs={3}>
                   <IconButton
