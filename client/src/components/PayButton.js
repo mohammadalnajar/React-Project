@@ -23,7 +23,7 @@ export const PayButton = () => {
     <>
       <Button
         onClick={() => paymentHandle()}
-        className='my-5'
+        className='my-3'
         variant='contained'
         color='success'
       >

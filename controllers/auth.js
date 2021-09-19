@@ -21,13 +21,15 @@ exports.registerUser = async (req, res) => {
       joinedAt: registeredUser.joinedAt,
       status: {
         register: 'Success registered',
+        success: true,
       },
     });
   } catch (error) {
     return res.status(500).json({
       msg: error,
       status: {
-        register: 'Failed to register',
+        msg: 'Failed to register',
+        success: false,
       },
     });
   }
@@ -49,6 +51,7 @@ exports.loginUser = async (req, res) => {
           userRole,
           status: {
             loggedIn: true,
+            success: true,
             msg: 'Success LoggedIn',
           },
         });
@@ -59,7 +62,11 @@ exports.loginUser = async (req, res) => {
       }
     } else {
       return res.status(404).json({
-        status: { loggedIn: false, msg: 'Username or Password is incorrect' },
+        status: {
+          loggedIn: false,
+          msg: 'Username or Password is incorrect',
+          success: false,
+        },
       });
     }
   } catch (error) {
@@ -68,6 +75,8 @@ exports.loginUser = async (req, res) => {
       msg: error,
       status: {
         login: 'Failed to login',
+        msg: 'Failed to login',
+        success: false,
       },
     });
   }

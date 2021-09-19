@@ -27,6 +27,7 @@ exports.getDevices = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: {
+        success: false,
         msg: 'Failed to get devices',
         error,
       },
