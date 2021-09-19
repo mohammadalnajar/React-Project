@@ -40,7 +40,10 @@ export const ShoppingCart = () => {
   }));
 
   return (
-    <ShoppingCartTooltip title={<ShoppingCartList />} placement='bottom-start'>
+    <ShoppingCartTooltip
+      title={<ShoppingCartList page='SmallShoppingCart' />}
+      placement='bottom-start'
+    >
       <IconButton aria-label='cart'>
         <StyledBadge badgeContent={numItemsInCart} color='secondary'>
           <ShoppingCartIcon />

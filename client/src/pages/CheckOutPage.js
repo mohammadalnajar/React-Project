@@ -1,10 +1,11 @@
 import React from 'react';
 import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
-
-export const ShoppingCartPage = () => {
+import { Nav } from '../components/Nav';
+export const CheckOutPage = () => {
   return (
     <>
-      <ShoppingCartList />
+      <Nav />
+      <ShoppingCartList page='CheckOutPage' />
     </>
   );
 };
