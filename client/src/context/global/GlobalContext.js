@@ -1,11 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import { GlobalReducer } from './GlobalReducer';
-
-// starting state
-const initialState = {
-  user: { name: '', email: '', userRole: '' },
-  status: { loggedIn: '' },
-};
+import { initialState } from './initialState';
 
 export const GlobalContext = createContext(initialState);
 
@@ -48,12 +43,15 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
+  // reset Error
   const resetError = () => {
     dispatch({
       type: 'ERROR',
       payload: { loggedIn: '' },
     });
   };
+
+  // log out user
   const logoutHandler = () => {
     dispatch({
       type: 'LOGOUT',
@@ -61,6 +59,8 @@ export const GlobalProvider = ({ children }) => {
     });
     localStorage.clear();
   };
+
+  // set User
   const setUser = (info) => {
     if (info.email) {
       const { firstName, lastName, email, joinedAt, userRole, status } = info;
@@ -71,14 +71,50 @@ export const GlobalProvider = ({ children }) => {
       });
     }
   };
+
+  // get all devices
+  const getDevices = async () => {
+    try {
+      const response = await fetch('/api/devices', {
+        method: 'GET',
+      });
+      const devices = await response.json();
+      console.log(devices);
+      if (devices.length > 0) {
+        dispatch({ type: 'SET_DEVICES', payload: devices });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // add to shopping cart
+  const addItemToCart = (item) => {
+    dispatch({
+      type: 'ADD_ITEM_TO_CART',
+      payload: item,
+    });
+  };
+  // del item from shopping cart
+  const delItemCart = (item) => {
+    dispatch({
+      type: 'DEL_ITEM_CART',
+      payload: item,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
         loginHandler,
         user: state.user,
         status: state.status,
+        devices: state.devices,
+        shoppingCartItems: state.shoppingCartItems,
         resetError,
         setUser,
+        getDevices,
+        addItemToCart,
+        delItemCart,
       }}
     >
       {children}

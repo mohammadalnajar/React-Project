@@ -17,6 +17,7 @@ connectDB();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/assets', express.static('assets'));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
