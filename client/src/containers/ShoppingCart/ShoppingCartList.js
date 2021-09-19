@@ -2,6 +2,7 @@ import { Grid } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { PayButton } from '../../components/PayButton';
 import { ShoppingCartItem } from '../../components/ShoppingCartItem';
 import { GlobalContext } from '../../context/global/GlobalContext';
 
@@ -9,7 +10,7 @@ export const ShoppingCartList = ({ page }) => {
   const { shoppingCartItems } = useContext(GlobalContext);
   const totalPrice = shoppingCartItems
     .map((item) => {
-      return item.price * item.count;
+      return item.price * item.quantity;
     })
     .reduce((a, b) => a + b);
 
@@ -17,7 +18,7 @@ export const ShoppingCartList = ({ page }) => {
     <>
       <Grid container>
         <Grid container item xs={12}>
-          {shoppingCartItems.length > 1 ? (
+          {shoppingCartItems[0]._id.length !== 0 ? (
             shoppingCartItems.map((item) => (
               <ShoppingCartItem key={item._id} item={item} />
             ))
@@ -39,9 +40,7 @@ export const ShoppingCartList = ({ page }) => {
                 <Button>Go to Checkout</Button>
               </Link>
             ) : (
-              <Button className='my-5' variant='contained' color='success'>
-                Pay with credit card
-              </Button>
+              <PayButton />
             )}
           </Grid>
         </Grid>

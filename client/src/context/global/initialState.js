@@ -44,7 +44,7 @@ export const initialState = {
       storage: '',
       imageUrl: '',
       price: 0,
-      count: 0,
+      quantity: 0,
     },
   ],
 };

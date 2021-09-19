@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
 
 import IconButton from '@mui/material/IconButton';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
@@ -13,7 +12,7 @@ export const ShoppingCart = () => {
   const { shoppingCartItems } = useContext(GlobalContext);
 
   const numItemsInCart = shoppingCartItems
-    .map((item) => item.count)
+    .map((item) => item.quantity)
     .reduce((acc, curr) => acc + curr);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -45,7 +44,10 @@ export const ShoppingCart = () => {
       placement='bottom-start'
     >
       <IconButton aria-label='cart'>
-        <StyledBadge badgeContent={numItemsInCart} color='secondary'>
+        <StyledBadge
+          badgeContent={numItemsInCart === 0 ? '0' : numItemsInCart}
+          color='secondary'
+        >
           <ShoppingCartIcon />
         </StyledBadge>
       </IconButton>

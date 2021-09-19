@@ -11,6 +11,7 @@ const connectDB = require('./config/db');
 // Routes imports
 const authRouter = require('./routes/auth');
 const devicesRouter = require('./routes/devices');
+const paymentRouter = require('./routes/payment');
 
 // connect to db
 connectDB();
@@ -28,6 +29,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/auth', authRouter);
 // devices Route
 app.use('/api/devices', devicesRouter);
+// payment Route
+app.use('/api/payment', paymentRouter);
 
 // start the app with the static page from the build folder in client side
 if (process.env.NODE_ENV === 'production') {

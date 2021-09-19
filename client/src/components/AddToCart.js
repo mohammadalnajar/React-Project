@@ -18,7 +18,7 @@ export const AddToCart = ({ device }) => {
     imageUrl,
     price,
     storage: storage[0],
-    count: 1,
+    quantity: 1,
   };
   return <button onClick={() => addItemToCart(item)}>+</button>;
 };
