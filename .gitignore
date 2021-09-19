@@ -27,3 +27,5 @@ yarn-error.log*
 keys_dev.js
 
 req.rest
+
+.vscode
