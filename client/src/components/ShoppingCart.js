@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
@@ -6,12 +6,20 @@ import { makeStyles } from '@mui/styles';
 
 import IconButton from '@mui/material/IconButton';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { GlobalContext } from '../context/global/GlobalContext';
 
 export const ShoppingCart = () => {
+  const { shoppingCartItems } = useContext(GlobalContext);
+
+  const numItemsInCart = shoppingCartItems
+    .map((item) => item.count)
+    .reduce((acc, curr) => acc + curr);
+
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -3,
       top: 13,
+      backgroundColor: '#D42A7D',
       border: `2px solid ${theme.palette.background.paper}`,
       padding: '0 4px',
     },
@@ -39,7 +47,7 @@ export const ShoppingCart = () => {
       placement='bottom-start'
     >
       <IconButton aria-label='cart'>
-        <StyledBadge badgeContent={2} color='secondary'>
+        <StyledBadge badgeContent={numItemsInCart} color='secondary'>
           <ShoppingCartIcon />
         </StyledBadge>
       </IconButton>

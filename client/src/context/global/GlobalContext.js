@@ -102,6 +102,7 @@ export const GlobalProvider = ({ children }) => {
         user: state.user,
         status: state.status,
         devices: state.devices,
+        shoppingCartItems: state.shoppingCartItems,
         resetError,
         setUser,
         getDevices,

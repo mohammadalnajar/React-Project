@@ -18,9 +18,21 @@ export const GlobalReducer = (state, action) => {
         devices: action.payload,
       };
     case 'ADD_ITEM_TO_CART':
+      for (let i = 0; i < state.shoppingCartItems.length; i++) {
+        if (state.shoppingCartItems[i]._id === action.payload._id) {
+          state.shoppingCartItems[i].count++;
+          break;
+        } else if (i === state.shoppingCartItems.length - 1) {
+          state.shoppingCartItems.push(action.payload);
+          break;
+        } else {
+          continue;
+        }
+      }
+
       return {
         ...state,
-        shoppingCartItems: [...state.shoppingCartItems, action.payload],
+        shoppingCartItems: state.shoppingCartItems,
       };
     case 'ERROR':
       return {
