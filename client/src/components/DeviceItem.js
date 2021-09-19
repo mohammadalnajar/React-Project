@@ -1,23 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import notFound from '../assets/not-found-img.jpg';
-import iphone13proImage from '../assets/iphone13pro.png';
 import { AddToCart } from './AddToCart';
 import { Grid } from '@material-ui/core';
 
 export const DeviceItem = ({ device }) => {
+  console.log(device.imageUrl);
   const useStyles = makeStyles({
-    container: {
-      border: '2px solid black',
-      width: '80%',
-      margin: '20px 10px 20px auto',
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    dFlex: {
-      display: 'flex',
-      alignItems: 'center',
-    },
     deviceContainer: {
       borderRadius: '5px',
       backgroundColor: '#EEEEEE',
@@ -29,7 +17,7 @@ export const DeviceItem = ({ device }) => {
       <Grid className={`${classes.deviceContainer} m-2  p-2`}>
         <Grid container alignItems='stretch'>
           <Grid item xs={12} container justifyContent='center'>
-            <img src={iphone13proImage} alt='not found' width='100px' />
+            <img src={device.imageUrl} alt='not found' width='100px' />
           </Grid>
           <Grid justifyContent='center' container item>
             <Grid justifyContent='center' container item xs={8}>
