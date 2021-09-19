@@ -11,19 +11,39 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link } from 'react-router-dom';
 import { AlertModal } from './AlertModal';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
+});
 
 export const LoginForm = ({ loginHandler, status, resetError }) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [openAlertModal, setOpenAlertModal] = useState(false);
   const handleOpen = () => setOpenAlertModal(true);
-  const handleClose = () => {
-    setOpenAlertModal(false);
-    resetError();
-  };
+  // const handleClose = () => {
+  //   setOpenAlertModal(false);
+  //   resetError();
+  // };
   useEffect(() => {
-    if (status.loggedIn === false) {
-      handleOpen();
+    if (status.success === false) {
+      // handleOpen();
+      handleClick();
     }
   }, [status]);
 
@@ -92,13 +112,17 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
             </Grid>
           </Box>
         </Box>
-        {/* <Copyright sx={{ mt: 5 }} /> */}
       </Container>
-      <AlertModal
+      {/* <AlertModal
         open={openAlertModal}
         handleClose={handleClose}
         alertMessage={status.msg}
-      />
+      /> */}
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity='error' sx={{ width: '100%' }}>
+          {status.msg}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
