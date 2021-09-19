@@ -1,10 +1,10 @@
-import { Grid } from '@material-ui/core';
+import { Grid, Button } from '@material-ui/core';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import { ShoppingCart } from './ShoppingCart';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { Link } from 'react-router-dom';
 
 export const Nav = (props) => {
   console.log('in the nav');
@@ -23,39 +23,50 @@ export const Nav = (props) => {
       display: 'flex',
       alignItems: 'center',
     },
+    link: {
+      textDecoration: 'none',
+    },
+    btn: {
+      '&:hover': {
+        backgroundColor: '#F5F5F5',
+        color: '#50A0DF',
+      },
+    },
   });
   const classes = useStyles(props);
   return (
-    <div>
-      <nav className={classes.nav}>
-        <Grid container alignItems='center'>
-          <Grid container justifyContent='center' item xs={2}>
-            Home
-          </Grid>
-          <Grid container justifyContent='center' item xs={2}>
-            Contact
-          </Grid>
-          <Grid container justifyContent='center' item xs={2}>
-            Shop
-          </Grid>
-          <Grid item container xs={6} justifyContent='flex-end'>
-            <Grid item xs={6} container justifyContent='flex-end'>
-              <Button variant='primary' startIcon={<LoginIcon />}>
-                Log out
-              </Button>
-            </Grid>
-            <Grid
-              item
-              container
-              justifyContent='flex-end'
-              className='p-2'
-              xs={2}
-            >
-              <ShoppingCart />
-            </Grid>
-          </Grid>
+    <Grid container>
+      <Grid alignItems='center' container justifyContent='center' item xs={2}>
+        <Link to='Home' className={classes.link}>
+          <Button className={classes.btn}>Home</Button>
+        </Link>
+      </Grid>
+      <Grid alignItems='center' container justifyContent='center' item xs={2}>
+        <Link className={classes.link} to='contact'>
+          <Button className={classes.btn}>Contact</Button>
+        </Link>
+      </Grid>
+      <Grid container alignItems='center' justifyContent='center' item xs={2}>
+        <Link className={classes.link} to='Shop'>
+          <Button className={classes.btn}>Shop</Button>
+        </Link>
+      </Grid>
+      <Grid item container xs={6} justifyContent='flex-end'>
+        <Grid
+          item
+          xs={6}
+          container
+          alignItems='center'
+          justifyContent='flex-end'
+        >
+          <Button className={classes.btn} startIcon={<LoginIcon />}>
+            Log out
+          </Button>
         </Grid>
-      </nav>
-    </div>
+        <Grid item container justifyContent='flex-end' className='p-2' xs={2}>
+          <ShoppingCart />
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };

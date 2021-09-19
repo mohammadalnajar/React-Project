@@ -87,6 +87,21 @@ export const GlobalProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  // add to shopping cart
+  const addItemToCart = (item) => {
+    dispatch({
+      type: 'ADD_ITEM_TO_CART',
+      payload: item,
+    });
+  };
+  // del item from shopping cart
+  const delItemCart = (item) => {
+    dispatch({
+      type: 'DEL_ITEM_CART',
+      payload: item,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -94,9 +109,12 @@ export const GlobalProvider = ({ children }) => {
         user: state.user,
         status: state.status,
         devices: state.devices,
+        shoppingCartItems: state.shoppingCartItems,
         resetError,
         setUser,
         getDevices,
+        addItemToCart,
+        delItemCart,
       }}
     >
       {children}

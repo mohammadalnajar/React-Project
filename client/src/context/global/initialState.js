@@ -8,6 +8,7 @@ export const initialState = {
       brand: '',
       type: '',
       price: 0,
+      imageUrl: '',
       specs: {
         releaseDate: '',
         display: {
@@ -34,6 +35,16 @@ export const initialState = {
           charging: '',
         },
       },
+    },
+  ],
+  shoppingCartItems: [
+    {
+      _id: '',
+      name: '',
+      storage: '',
+      imageUrl: '',
+      price: 0,
+      count: 0,
     },
   ],
 };
