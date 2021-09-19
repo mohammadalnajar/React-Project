@@ -4,7 +4,6 @@ import { AddToCart } from './AddToCart';
 import { Grid } from '@material-ui/core';
 
 export const DeviceItem = ({ device }) => {
-  console.log(device.imageUrl);
   const useStyles = makeStyles({
     deviceContainer: {
       borderRadius: '5px',
