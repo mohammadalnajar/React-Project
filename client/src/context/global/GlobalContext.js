@@ -58,7 +58,7 @@ export const GlobalProvider = ({ children }) => {
       type: 'LOGOUT',
       payload: initialState,
     });
-    localStorage.clear();
+    localStorage.removeItem('user');
   };
 
   // set User
@@ -139,6 +139,15 @@ export const GlobalProvider = ({ children }) => {
       JSON.stringify(shoppingCartItems)
     );
   };
+
+  // reset cart items
+  const resetCartItems = () => {
+    dispatch({
+      type: 'RESET_CART_ITEMS',
+      payload: initialState.shoppingCartItems,
+    });
+    localStorage.removeItem('shoppingCartItems');
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -154,6 +163,7 @@ export const GlobalProvider = ({ children }) => {
         addItemToCart,
         delItemCart,
         reloadCartItems,
+        resetCartItems,
       }}
     >
       {children}

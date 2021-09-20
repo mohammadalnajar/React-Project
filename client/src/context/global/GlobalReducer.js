@@ -1,5 +1,3 @@
-import { initialState } from './initialState';
-
 export const GlobalReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
@@ -34,6 +32,11 @@ export const GlobalReducer = (state, action) => {
         ),
       };
     case 'RELOAD_CART_ITEMS':
+      return {
+        ...state,
+        shoppingCartItems: action.payload,
+      };
+    case 'RESET_CART_ITEMS':
       return {
         ...state,
         shoppingCartItems: action.payload,

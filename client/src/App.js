@@ -7,6 +7,7 @@ import { useContext, useEffect } from 'react';
 import { GlobalContext } from './context/global/GlobalContext';
 import { CheckOutPage } from './pages/CheckOutPage';
 import { HomePage } from './pages/HomePage';
+import { SuccessPage } from './pages/SuccessPage';
 function App() {
   const { setUser, reloadCartItems } = useContext(GlobalContext);
 
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/dashboard' component={DashboardPage} />
         <Route exact path='/shop' component={DashboardPage} />
         <Route exact path='/cart' component={CheckOutPage} />
+        <Route exact path='/success' component={SuccessPage} />
       </Switch>
     </>
   );
