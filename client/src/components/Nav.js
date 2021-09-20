@@ -1,12 +1,15 @@
 import { Grid, Button } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
-// import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import { ShoppingCart } from './ShoppingCart';
 import { Link } from 'react-router-dom';
+import { LogoutButton } from './LogoutButton';
+import { LoginButton } from './LoginButton';
+import { GlobalContext } from '../context/global/GlobalContext';
 
 export const Nav = (props) => {
+  const { status } = useContext(GlobalContext);
   console.log('in the nav');
   const useStyles = makeStyles({
     nav: {
@@ -37,7 +40,7 @@ export const Nav = (props) => {
   return (
     <Grid container>
       <Grid alignItems='center' container justifyContent='center' item xs={2}>
-        <Link to='Home' className={classes.link}>
+        <Link to='/' className={classes.link}>
           <Button className={classes.btn}>Home</Button>
         </Link>
       </Grid>
@@ -59,9 +62,11 @@ export const Nav = (props) => {
           alignItems='center'
           justifyContent='flex-end'
         >
-          <Button className={classes.btn} startIcon={<LoginIcon />}>
-            Log out
-          </Button>
+          {status.loggedIn ? (
+            <LogoutButton classes={classes} />
+          ) : (
+            <LoginButton classes={classes} />
+          )}
         </Grid>
         <Grid item container justifyContent='flex-end' className='p-2' xs={2}>
           <ShoppingCart />

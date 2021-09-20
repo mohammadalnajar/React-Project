@@ -6,6 +6,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { useContext, useEffect } from 'react';
 import { GlobalContext } from './context/global/GlobalContext';
 import { CheckOutPage } from './pages/CheckOutPage';
+import { HomePage } from './pages/HomePage';
 function App() {
   const { setUser } = useContext(GlobalContext);
 
@@ -20,7 +21,8 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path='/' component={RegisterPage} />
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/register' component={RegisterPage} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/dashboard' component={DashboardPage} />
         <Route exact path='/shop' component={DashboardPage} />
