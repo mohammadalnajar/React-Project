@@ -1,6 +1,6 @@
 export const initialState = {
   user: { name: '', email: '', userRole: '' },
-  status: { loggedIn: '' },
+  status: { loggedIn: false },
   devices: [
     {
       _id: '',

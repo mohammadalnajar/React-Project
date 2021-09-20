@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { RegisterDoneModal } from './RegisterDoneModal';
+import { GlobalContext } from '../context/global/GlobalContext';
 
 export const RegisterForm = () => {
+  const { resetError } = useContext(GlobalContext);
+
   const [fName, setFName] = useState('');
   const [lName, setLName] = useState('');
   const [email, setEmail] = useState('');
@@ -35,7 +38,9 @@ export const RegisterForm = () => {
       console.log(error);
     }
   };
-
+  useEffect(() => {
+    resetError();
+  }, []);
   return (
     <>
       <Form onSubmit={(e) => registerUser(e, fName, lName, email, password)}>

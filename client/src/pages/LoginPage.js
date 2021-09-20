@@ -4,7 +4,6 @@ import { GlobalContext } from '../context/global/GlobalContext';
 
 export const LoginPage = () => {
   const { loginHandler, user, status, resetError } = useContext(GlobalContext);
-
   return (
     <LoginForm
       loginHandler={loginHandler}

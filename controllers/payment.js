@@ -15,14 +15,13 @@ exports.paymentHandle = async (req, res) => {
       quantity: item.quantity,
     };
   });
-  console.log(purchasedItems);
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: purchasedItems,
       success_url: `http://localhost:3000/shop`,
-      cancel_url: `http://localhost:3000/shop`,
+      cancel_url: `http://localhost:3000/cart`,
     });
     res.json({ url: session.url });
   } catch (error) {
