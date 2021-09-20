@@ -8,7 +8,7 @@ import { GlobalContext } from './context/global/GlobalContext';
 import { CheckOutPage } from './pages/CheckOutPage';
 import { HomePage } from './pages/HomePage';
 function App() {
-  const { setUser } = useContext(GlobalContext);
+  const { setUser, reloadCartItems } = useContext(GlobalContext);
 
   // get user info from localStorage
   useEffect(() => {
@@ -16,6 +16,11 @@ function App() {
     if (loggedInUserInfo) {
       const userInfo = JSON.parse(loggedInUserInfo);
       setUser(userInfo);
+    }
+    const shoppingCartItems = localStorage.getItem('shoppingCartItems');
+    if (shoppingCartItems) {
+      const shoppingCartItemsArray = JSON.parse(shoppingCartItems);
+      reloadCartItems(shoppingCartItemsArray);
     }
   }, []);
   return (

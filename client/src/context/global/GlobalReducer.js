@@ -20,18 +20,6 @@ export const GlobalReducer = (state, action) => {
         devices: action.payload,
       };
     case 'ADD_ITEM_TO_CART':
-      for (let i = 0; i < state.shoppingCartItems.length; i++) {
-        if (state.shoppingCartItems[i]._id === action.payload._id) {
-          state.shoppingCartItems[i].quantity++;
-          break;
-        } else if (i === state.shoppingCartItems.length - 1) {
-          state.shoppingCartItems.push(action.payload);
-          break;
-        } else {
-          continue;
-        }
-      }
-
       return {
         ...state,
         shoppingCartItems: state.shoppingCartItems.filter(
@@ -39,14 +27,16 @@ export const GlobalReducer = (state, action) => {
         ),
       };
     case 'DEL_ITEM_CART':
-      if (state.shoppingCartItems.length === 1) {
-        state.shoppingCartItems.push(initialState.shoppingCartItems[0]);
-      }
       return {
         ...state,
         shoppingCartItems: state.shoppingCartItems.filter(
           (item) => item._id !== action.payload._id
         ),
+      };
+    case 'RELOAD_CART_ITEMS':
+      return {
+        ...state,
+        shoppingCartItems: action.payload,
       };
     case 'ERROR':
       return {
