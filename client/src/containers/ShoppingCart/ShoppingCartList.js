@@ -17,8 +17,8 @@ export const ShoppingCartList = ({ page }) => {
 
   return (
     <>
-      <Grid container>
-        <Grid container item xs={12}>
+      <Grid container justifyContent='center'>
+        <Grid container item xs={12} justifyContent='center'>
           {/* check if cart not empty */}
           {shoppingCartItems[0]._id.length !== 0 ? (
             <>
@@ -49,7 +49,22 @@ export const ShoppingCartList = ({ page }) => {
             </>
           ) : (
             <>
-              <p>Your Cart is empty</p>
+              <Grid item xs={12} container justifyContent='center'>
+                <Grid item container justifyContent='center' xs={12}>
+                  <p>Your Cart is empty</p>
+                </Grid>
+                <Grid item container justifyContent='center' xs={12}>
+                  {page === 'CheckOutPage' ? (
+                    <Link to='/shop'>
+                      <Button>Go to shop</Button>
+                    </Link>
+                  ) : (
+                    <Link to='/cart'>
+                      <Button>Go to Checkout</Button>
+                    </Link>
+                  )}
+                </Grid>
+              </Grid>
             </>
           )}
         </Grid>
