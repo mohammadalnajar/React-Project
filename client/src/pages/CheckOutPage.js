@@ -6,7 +6,6 @@ export const CheckOutPage = () => {
   return (
     <>
       <Header page='CheckOutPage' />
-
       <ShoppingCartList page='CheckOutPage' />
     </>
   );
