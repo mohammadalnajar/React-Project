@@ -1,15 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
 import { AddToCart } from './AddToCart';
 import { Grid } from '@material-ui/core';
+import { useStyles } from '../Styles/ClassesForStyles';
 
 export const DeviceItem = ({ device }) => {
-  const useStyles = makeStyles({
-    deviceContainer: {
-      borderRadius: '5px',
-      backgroundColor: '#EEEEEE',
-    },
-  });
   const classes = useStyles();
   return (
     <Grid item xs={4}>

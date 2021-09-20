@@ -17,7 +17,7 @@ export const ShoppingCartItem = ({ item }) => {
               <Grid className='m-2' item xs={12}>
                 {item.name} {item.storage}
               </Grid>
-              <Grid className='m-2' item container xs={12}>
+              <Grid className='m-2' item container alignItems='center' xs={12}>
                 <Grid item xs={6}>
                   ${item.price}
                 </Grid>

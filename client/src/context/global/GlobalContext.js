@@ -30,13 +30,14 @@ export const GlobalProvider = ({ children }) => {
         });
         // storing user in local storage
         localStorage.setItem('user', JSON.stringify(info));
+        return status;
       } else {
         const { status } = info;
-        console.log(status, 3);
         dispatch({
           type: 'ERROR',
           payload: status,
         });
+        return status;
       }
     } catch (error) {
       console.log(error);
@@ -47,7 +48,7 @@ export const GlobalProvider = ({ children }) => {
   const resetError = () => {
     dispatch({
       type: 'ERROR',
-      payload: { loggedIn: '' },
+      payload: initialState.status,
     });
   };
 

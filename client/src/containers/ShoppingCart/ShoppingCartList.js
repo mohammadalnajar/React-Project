@@ -2,12 +2,13 @@ import { Grid } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { LoginButton } from '../../components/LoginButton';
 import { PayButton } from '../../components/PayButton';
 import { ShoppingCartItem } from '../../components/ShoppingCartItem';
 import { GlobalContext } from '../../context/global/GlobalContext';
 
 export const ShoppingCartList = ({ page }) => {
-  const { shoppingCartItems } = useContext(GlobalContext);
+  const { shoppingCartItems, status } = useContext(GlobalContext);
   const totalPrice = shoppingCartItems
     .map((item) => {
       return item.price * item.quantity;
@@ -39,8 +40,10 @@ export const ShoppingCartList = ({ page }) => {
               <Link to='cart'>
                 <Button>Go to Checkout</Button>
               </Link>
-            ) : (
+            ) : status.loggedIn ? (
               <PayButton />
+            ) : (
+              <LoginButton page={page} />
             )}
           </Grid>
         </Grid>

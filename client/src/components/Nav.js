@@ -6,33 +6,11 @@ import { Link } from 'react-router-dom';
 import { LogoutButton } from './LogoutButton';
 import { LoginButton } from './LoginButton';
 import { GlobalContext } from '../context/global/GlobalContext';
+import { useStyles } from '../Styles/ClassesForStyles';
 
-export const Nav = (props) => {
+export const Nav = () => {
   const { status } = useContext(GlobalContext);
-  console.log('in the nav');
-  const useStyles = makeStyles({
-    nav: {},
-    fixed: {
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      width: '95vw',
-    },
-    dFlex: {
-      display: 'flex',
-      alignItems: 'center',
-    },
-    link: {
-      textDecoration: 'none',
-    },
-    btn: {
-      '&:hover': {
-        backgroundColor: '#F5F5F5',
-        color: '#50A0DF',
-      },
-    },
-  });
-  const classes = useStyles(props);
+  const classes = useStyles();
   return (
     <Grid container>
       <Grid alignItems='center' container justifyContent='center' item xs={2}>
@@ -40,17 +18,12 @@ export const Nav = (props) => {
           <Button className={classes.btn}>Home</Button>
         </Link>
       </Grid>
-      <Grid alignItems='center' container justifyContent='center' item xs={2}>
-        <Link className={classes.link} to='contact'>
-          <Button className={classes.btn}>Contact</Button>
-        </Link>
-      </Grid>
       <Grid container alignItems='center' justifyContent='center' item xs={2}>
         <Link className={classes.link} to='Shop'>
           <Button className={classes.btn}>Shop</Button>
         </Link>
       </Grid>
-      <Grid item container xs={6} justifyContent='flex-end'>
+      <Grid item container xs={8} justifyContent='flex-end'>
         <Grid
           item
           xs={6}
