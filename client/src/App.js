@@ -8,6 +8,7 @@ import { GlobalContext } from './context/global/GlobalContext';
 import { CheckOutPage } from './pages/CheckOutPage';
 import { HomePage } from './pages/HomePage';
 import { SuccessPage } from './pages/SuccessPage';
+import { Nav } from './components/Nav';
 function App() {
   const { setUser, reloadCartItems } = useContext(GlobalContext);
 
@@ -26,6 +27,7 @@ function App() {
   }, []);
   return (
     <>
+      <Nav />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/register' component={RegisterPage} />

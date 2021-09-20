@@ -8,6 +8,7 @@ import { GlobalContext } from '../context/global/GlobalContext';
 import { useStyles } from '../Styles/ClassesForStyles';
 
 export const Nav = () => {
+  console.log('in the nav');
   const { status } = useContext(GlobalContext);
   const classes = useStyles();
   return (

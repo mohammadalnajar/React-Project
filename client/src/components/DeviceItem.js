@@ -6,7 +6,7 @@ import { useStyles } from '../Styles/ClassesForStyles';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={4}>
+    <Grid item xs={4} style={{ minHeight: '330px' }}>
       <Grid className={`${classes.deviceContainer} m-2  p-2`}>
         <Grid container alignItems='stretch'>
           <Grid item xs={12} container justifyContent='center'>
