@@ -74,10 +74,11 @@ export const PriceFilter = ({ devices, setDevices, devicesGlobal }) => {
               style={{ color: '#9C9C9C' }}
             >
               {
-                devices.filter((device) => {
+                devicesGlobal.filter((device) => {
                   if (device.price > 650) {
                     return device;
                   }
+                  return false;
                 }).length
               }
             </Grid>
@@ -108,10 +109,11 @@ export const PriceFilter = ({ devices, setDevices, devicesGlobal }) => {
               style={{ color: '#9C9C9C' }}
             >
               {
-                devices.filter((device) => {
+                devicesGlobal.filter((device) => {
                   if (device.price < 650 && device.price > 300) {
                     return device;
                   }
+                  return false;
                 }).length
               }
             </Grid>
@@ -142,10 +144,11 @@ export const PriceFilter = ({ devices, setDevices, devicesGlobal }) => {
               style={{ color: '#9C9C9C' }}
             >
               {
-                devices.filter((device) => {
+                devicesGlobal.filter((device) => {
                   if (device.price < 301) {
                     return device;
                   }
+                  return false;
                 }).length
               }
             </Grid>

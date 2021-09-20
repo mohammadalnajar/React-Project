@@ -68,7 +68,7 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
                     style={{ color: '#9C9C9C' }}
                   >
                     {
-                      devices.filter((device) => {
+                      devicesGlobal.filter((device) => {
                         return device.brand === brand;
                       }).length
                     }
