@@ -1,7 +1,6 @@
 import { Grid, Button } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
-import LoginIcon from '@mui/icons-material/Login';
 import { ShoppingCart } from './ShoppingCart';
 import { Link } from 'react-router-dom';
 import { LogoutButton } from './LogoutButton';
@@ -12,10 +11,7 @@ export const Nav = (props) => {
   const { status } = useContext(GlobalContext);
   console.log('in the nav');
   const useStyles = makeStyles({
-    nav: {
-      // backgroundColor: 'red',
-      //   color: (props) => props.color,
-    },
+    nav: {},
     fixed: {
       position: 'fixed',
       top: '0',

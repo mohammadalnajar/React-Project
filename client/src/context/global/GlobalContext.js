@@ -106,6 +106,7 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         loginHandler,
+        logoutHandler,
         user: state.user,
         status: state.status,
         devices: state.devices,
