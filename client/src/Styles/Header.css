@@ -1,0 +1,23 @@
+.header {
+  background-color: #50a0df;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+}
+.back-btn {
+  color: #ffffff;
+  background-color: #50a0df;
+  border: 0;
+}
+.back-icon {
+  margin-right: 5px;
+}
+.back-btn:hover .back-icon {
+  transform: translateX(-7px);
+  transition: all 0.2s ease-in-out;
+}
+.back-btn:not(:hover) .back-icon {
+  transition: all 0.2s ease-in-out;
+}

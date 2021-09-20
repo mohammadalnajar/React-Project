@@ -1,0 +1,12 @@
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  height: 100%;
+}
+.nav-list li:hover {
+  background-color: '#F5F5F5';
+  color: '#50A0DF';
+  height: 100%;
+}

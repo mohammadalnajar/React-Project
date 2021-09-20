@@ -6,23 +6,32 @@ import { LogoutButton } from './LogoutButton';
 import { LoginButton } from './LoginButton';
 import { GlobalContext } from '../context/global/GlobalContext';
 import { useStyles } from '../Styles/ClassesForStyles';
-
+import '../Styles/Nav.css';
 export const Nav = () => {
-  console.log('in the nav');
   const { status } = useContext(GlobalContext);
   const classes = useStyles();
   return (
     <Grid container>
-      <Grid alignItems='center' container justifyContent='center' item xs={2}>
-        <Link to='/' className={classes.link}>
-          <Button className={classes.btn}>Home</Button>
-        </Link>
+      <Grid item xs={4}>
+        <ul className='nav-list'>
+          <li>
+            <Link to='/' className={classes.link}>
+              <Button className={classes.btn}>Home</Button>
+            </Link>
+          </li>
+          <li>
+            <Link className={classes.link} to='Shop'>
+              <Button className={classes.btn}>Shop</Button>
+            </Link>
+          </li>
+        </ul>
+      </Grid>
+      {/* <Grid alignItems='center' container justifyContent='center' item xs={2}>
+        
       </Grid>
       <Grid container alignItems='center' justifyContent='center' item xs={2}>
-        <Link className={classes.link} to='Shop'>
-          <Button className={classes.btn}>Shop</Button>
-        </Link>
-      </Grid>
+        
+      </Grid> */}
       <Grid item container xs={8} justifyContent='flex-end'>
         <Grid
           item

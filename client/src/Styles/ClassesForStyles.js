@@ -14,8 +14,10 @@ export const useStyles = makeStyles({
   },
   link: {
     textDecoration: 'none',
+    height: '100%',
   },
   btn: {
+    height: '100%',
     '&:hover': {
       backgroundColor: '#F5F5F5',
       color: '#50A0DF',
