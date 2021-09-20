@@ -1,6 +1,5 @@
 import { Grid, Button } from '@material-ui/core';
 import React, { useContext } from 'react';
-import { makeStyles } from '@mui/styles';
 import { ShoppingCart } from './ShoppingCart';
 import { Link } from 'react-router-dom';
 import { LogoutButton } from './LogoutButton';

@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link, Redirect } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useHistory } from 'react-router-dom';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
@@ -34,7 +35,6 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
     }
   }, [status]);
   //* END Alert logic
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [localStatus, setLocalStatus] = useState(false);
@@ -48,6 +48,16 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
       setLocalStatus(false);
     }
   };
+
+  // to know from which path is the user coming from
+  const {
+    history: {
+      location: {
+        state: { from },
+      },
+    },
+  } = useHistory();
+
   return (
     <div>
       <Container component='main' maxWidth='xs'>
@@ -115,7 +125,7 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
           {status.msg}
         </Alert>
       </Snackbar>
-      {localStatus && <Redirect to='/' />}
+      {localStatus && <Redirect to={from} />}
     </div>
   );
 };

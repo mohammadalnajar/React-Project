@@ -11,7 +11,13 @@ export const LoginButton = ({ page }) => {
   return (
     <>
       <Grid className='my-4'>
-        <Link to='/login' className={classes.link}>
+        <Link
+          to={{
+            pathname: '/login',
+            state: { from: location.pathname },
+          }}
+          className={classes.link}
+        >
           <Button className={classes.btn} startIcon={<LoginIcon />}>
             {location.pathname === '/cart' && page === 'CheckOutPage'
               ? 'Please Login to Pay'

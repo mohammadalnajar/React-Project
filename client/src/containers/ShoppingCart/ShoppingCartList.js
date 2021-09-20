@@ -20,32 +20,34 @@ export const ShoppingCartList = ({ page }) => {
       <Grid container>
         <Grid container item xs={12}>
           {shoppingCartItems[0]._id.length !== 0 ? (
-            shoppingCartItems.map((item) => (
-              <ShoppingCartItem key={item._id} item={item} />
-            ))
+            <>
+              {shoppingCartItems.map((item) => (
+                <ShoppingCartItem key={item._id} item={item} />
+              ))}
+              <Grid container item xs={12}>
+                <Grid item xs={4}></Grid>
+                <Grid item xs={8}>
+                  {' '}
+                  Total:${totalPrice}
+                </Grid>
+              </Grid>
+              <Grid container justifyContent='center' item xs={12}>
+                <Grid item>
+                  {page === 'SmallShoppingCart' ? (
+                    <Link to='cart'>
+                      <Button>Go to Checkout</Button>
+                    </Link>
+                  ) : status.loggedIn && page === 'CheckOutPage' ? (
+                    <PayButton />
+                  ) : (
+                    <LoginButton page={page} />
+                  )}
+                </Grid>
+              </Grid>
+            </>
           ) : (
             <p>Your Cart is empty</p>
           )}
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={8}>
-            {' '}
-            Total:${totalPrice}
-          </Grid>
-        </Grid>
-        <Grid container justifyContent='center' item xs={12}>
-          <Grid item>
-            {page === 'SmallShoppingCart' ? (
-              <Link to='cart'>
-                <Button>Go to Checkout</Button>
-              </Link>
-            ) : status.loggedIn ? (
-              <PayButton />
-            ) : (
-              <LoginButton page={page} />
-            )}
-          </Grid>
         </Grid>
       </Grid>
     </>
