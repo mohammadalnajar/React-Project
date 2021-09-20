@@ -15,9 +15,11 @@ export const useStyles = makeStyles({
   link: {
     textDecoration: 'none',
     height: '100%',
+    fontFamily: 'tele-bold',
   },
   btn: {
     height: '100%',
+    fontFamily: 'tele-bold',
     '&:hover': {
       backgroundColor: '#F5F5F5',
       color: '#50A0DF',

@@ -1,12 +1,19 @@
+.nav {
+  font-family: 'tele-bold';
+}
 .nav-list {
   list-style-type: none;
   display: flex;
   justify-content: center;
   padding: 0;
   height: 100%;
+  font-family: 'tele-bold' !important;
 }
 .nav-list li:hover {
   background-color: '#F5F5F5';
   color: '#50A0DF';
   height: 100%;
+}
+.btn {
+  font-family: 'tele-bold' !important;
 }

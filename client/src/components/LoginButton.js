@@ -17,7 +17,7 @@ export const LoginButton = ({ page }) => {
           }}
           className={classes.link}
         >
-          <Button className={classes.btn} startIcon={<LoginIcon />}>
+          <Button className={`${classes.btn} btn`} startIcon={<LoginIcon />}>
             {location.pathname === '/cart' && page === 'CheckOutPage'
               ? 'Please Login to Pay'
               : 'Log in'}

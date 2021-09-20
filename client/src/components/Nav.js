@@ -11,27 +11,22 @@ export const Nav = () => {
   const { status } = useContext(GlobalContext);
   const classes = useStyles();
   return (
-    <Grid container>
+    <Grid container className='nav'>
       <Grid item xs={4}>
         <ul className='nav-list'>
           <li>
             <Link to='/' className={classes.link}>
-              <Button className={classes.btn}>Home</Button>
+              <Button className={`${classes.btn} btn`}>Home</Button>
             </Link>
           </li>
           <li>
             <Link className={classes.link} to='Shop'>
-              <Button className={classes.btn}>Shop</Button>
+              <Button className={`${classes.btn} btn`}>Shop</Button>
             </Link>
           </li>
         </ul>
       </Grid>
-      {/* <Grid alignItems='center' container justifyContent='center' item xs={2}>
-        
-      </Grid>
-      <Grid container alignItems='center' justifyContent='center' item xs={2}>
-        
-      </Grid> */}
+
       <Grid item container xs={8} justifyContent='flex-end'>
         <Grid
           item
