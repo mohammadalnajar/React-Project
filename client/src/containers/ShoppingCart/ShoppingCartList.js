@@ -19,6 +19,7 @@ export const ShoppingCartList = ({ page }) => {
     <>
       <Grid container>
         <Grid container item xs={12}>
+          {/* check if cart not empty */}
           {shoppingCartItems[0]._id.length !== 0 ? (
             <>
               {shoppingCartItems.map((item) => (
@@ -33,6 +34,7 @@ export const ShoppingCartList = ({ page }) => {
               </Grid>
               <Grid container justifyContent='center' item xs={12}>
                 <Grid item>
+                  {/* check if we are in small cart tooltip */}
                   {page === 'SmallShoppingCart' ? (
                     <Link to='cart'>
                       <Button>Go to Checkout</Button>
@@ -46,7 +48,9 @@ export const ShoppingCartList = ({ page }) => {
               </Grid>
             </>
           ) : (
-            <p>Your Cart is empty</p>
+            <>
+              <p>Your Cart is empty</p>
+            </>
           )}
         </Grid>
       </Grid>

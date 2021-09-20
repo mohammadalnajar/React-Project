@@ -35,6 +35,7 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
     }
   }, [status]);
   //* END Alert logic
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [localStatus, setLocalStatus] = useState(false);
@@ -49,15 +50,13 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
     }
   };
 
-  // to know from which path is the user coming from
+  //* to know from which path is the user coming from
   const {
-    history: {
-      location: {
-        state: { from },
-      },
+    location: {
+      state: { from },
     },
   } = useHistory();
-
+  console.log(from);
   return (
     <div>
       <Container component='main' maxWidth='xs'>
