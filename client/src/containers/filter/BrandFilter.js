@@ -36,46 +36,48 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
         <FormLabel>Brand:</FormLabel>
         <FormGroup>
-          <Grid container alignItems='center' justifyContent='center'>
-            {brands.length > 0 &&
-              brands.map((brand) => (
-                <>
-                  <Grid item xs={8}>
-                    <FormControlLabel
-                      key={brand}
-                      control={
-                        <Checkbox
-                          sx={{
-                            color: '#c5c5c5',
-                            '&.Mui-checked': {
-                              color: '#50A0DF',
-                            },
-                          }}
-                          size='small'
-                          onChange={handleChange}
-                          name={brand}
-                          value={brand}
-                        />
-                      }
-                      label={brand}
-                    />
-                  </Grid>
-                  <Grid
-                    item
-                    xs={4}
-                    container
-                    justifyContent='flex-end'
-                    style={{ color: '#9C9C9C' }}
-                  >
-                    {
-                      devicesGlobal.filter((device) => {
-                        return device.brand === brand;
-                      }).length
+          {brands.length > 0 &&
+            brands.map((brand) => (
+              <Grid
+                key={brand}
+                container
+                alignItems='center'
+                justifyContent='center'
+              >
+                <Grid item xs={8}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        sx={{
+                          color: '#c5c5c5',
+                          '&.Mui-checked': {
+                            color: '#50A0DF',
+                          },
+                        }}
+                        size='small'
+                        onChange={handleChange}
+                        name={brand}
+                        value={brand}
+                      />
                     }
-                  </Grid>
-                </>
-              ))}
-          </Grid>
+                    label={brand}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={4}
+                  container
+                  justifyContent='flex-end'
+                  style={{ color: '#9C9C9C' }}
+                >
+                  {
+                    devicesGlobal.filter((device) => {
+                      return device.brand === brand;
+                    }).length
+                  }
+                </Grid>
+              </Grid>
+            ))}
         </FormGroup>
       </FormControl>
     </>
