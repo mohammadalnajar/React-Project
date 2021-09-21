@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { RegisterDoneModal } from './RegisterDoneModal';
 import { GlobalContext } from '../context/global/GlobalContext';
-
+import TextField from '@mui/material/TextField';
+import { Grid } from '@material-ui/core';
+import '../Styles/RegisterForm.css';
 export const RegisterForm = () => {
   const { resetError } = useContext(GlobalContext);
 
@@ -41,61 +43,79 @@ export const RegisterForm = () => {
   useEffect(() => {
     resetError();
   }, []);
+  const { location } = useHistory();
+
   return (
     <>
-      <Form onSubmit={(e) => registerUser(e, fName, lName, email, password)}>
-        <Form.Group className='mb-3'>
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
+      <Grid
+        className='register-form'
+        item
+        xs={6}
+        onSubmit={(e) => registerUser(e, fName, lName, email, password)}
+        container
+        justifyContent='center'
+      >
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            required
             onChange={(e) => setFName(e.target.value)}
-            type='text'
-            placeholder='Enter Your first name'
             value={fName}
-            required
+            id='standard-required'
+            label='Enter Your first name'
+            variant='standard'
           />
-        </Form.Group>
-        <Form.Group className='mb-3'>
-          <Form.Label>last Name</Form.Label>
-          <Form.Control
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            required
             onChange={(e) => setLName(e.target.value)}
-            type='text'
-            placeholder='Enter Your last name'
             value={lName}
-            required
+            id='standard-required'
+            label='Enter Your last name'
+            variant='standard'
           />
-        </Form.Group>
-        <Form.Group className='mb-3'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            required
+            id='standard-required'
+            label='Email'
+            variant='standard'
             onChange={(e) => setEmail(e.target.value)}
-            type='email'
-            placeholder='Enter email'
-            value={email}
-            required
           />
-          <Form.Text className='text-muted'>
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className='mb-3'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            required
             onChange={(e) => setPassword(e.target.value)}
-            type='password'
-            placeholder='Password'
             value={password}
-            required
+            id='standard-password-input'
+            label='Password'
+            type='password'
+            autoComplete='current-password'
+            variant='standard'
           />
-        </Form.Group>
-
-        <Button variant='primary' type='submit'>
-          Submit
-        </Button>
-        <p>
-          Have you already an Account? <Link to='/login'> log in </Link>
-        </p>
-      </Form>
+        </Grid>
+        <Grid container justifyContent='center' item xs={6}>
+          <button className='register-btn' type='submit'>
+            Register
+          </button>
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <p>
+            Have you already an Account?{' '}
+            <Link
+              to={{
+                pathname: '/login',
+                state: { from: location.pathname },
+              }}
+            >
+              {' '}
+              Log in{' '}
+            </Link>
+          </p>
+        </Grid>
+      </Grid>
 
       <RegisterDoneModal
         show={modalShow}

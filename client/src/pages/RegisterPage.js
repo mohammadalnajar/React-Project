@@ -1,11 +1,15 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Header } from '../components/Header';
 import { RegisterForm } from '../components/RegisterForm';
 
 export const RegisterPage = () => {
   return (
-    <Container className='mt-5'>
-      <RegisterForm />
-    </Container>
+    <>
+      <Header page='RegisterPage' />
+      <Grid container item xs={12} justifyContent='center' className='my-5'>
+        <RegisterForm />
+      </Grid>
+    </>
   );
 };

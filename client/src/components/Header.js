@@ -14,8 +14,10 @@ export const Header = ({ page }) => {
       </div>
       {page === 'ShopPage' ? (
         <div>All smartphones</div>
-      ) : (
+      ) : page === 'CheckOutPage' ? (
         <div>Your Shop Cart</div>
+      ) : (
+        <div>Register</div>
       )}
       <div></div>
     </div>

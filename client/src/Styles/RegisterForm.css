@@ -1,0 +1,23 @@
+.register-btn {
+  width: 100%;
+  border: 0;
+  background-color: #50a0df;
+  color: #ffff;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  box-shadow: 0px 5px 1px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.7s ease box-shadow 0.7s ease;
+}
+
+.register-btn:active,
+.register-btn:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+.register-form {
+  font-family: 'tele-reg';
+}
+#standard-required {
+  margin: 5px 0px;
+  font-family: 'tele-reg';
+}
