@@ -57,7 +57,11 @@ exports.loginUser = async (req, res) => {
         });
       } else {
         return res.status(400).json({
-          status: { loggedIn: false, msg: 'Username OR Password is incorrect' },
+          status: {
+            loggedIn: false,
+            msg: 'Username OR Password is incorrect',
+            success: false,
+          },
         });
       }
     } else {

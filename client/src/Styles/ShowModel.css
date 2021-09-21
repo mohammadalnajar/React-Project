@@ -1,0 +1,26 @@
+.order-btn {
+  width: 100%;
+  border: 0;
+  padding: 10px 0px;
+  box-shadow: 0px 5px 1px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.7s ease box-shadow 0.7s ease;
+}
+.order-btn:active,
+.order-btn:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+.show-model {
+  font-family: 'tele-heavy';
+}
+ul.show-model-list,
+ul.specs-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+ul.specs-list {
+  font-family: 'tele-reg';
+  font-size: 0.8rem;
+}

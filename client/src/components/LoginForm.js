@@ -13,7 +13,7 @@ import { Link, Redirect } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useHistory } from 'react-router-dom';
-
+import '../Styles/LoginForm.css';
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
 });
@@ -58,73 +58,50 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
   } = useHistory();
   console.log(from);
   return (
-    <div>
-      <Container component='main' maxWidth='xs'>
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component='h1' variant='h5'>
-            Sign in
-          </Typography>
-          <Box component='form' onSubmit={(e) => submitForm(e)} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  type='email'
-                  required
-                  fullWidth
-                  id='email'
-                  label='Email Address'
-                  name='email'
-                  autoComplete='email'
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  required
-                  fullWidth
-                  name='password'
-                  label='Password'
-                  type='password'
-                  id='password'
-                  autoComplete='new-password'
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type='submit'
-              fullWidth
-              variant='contained'
-              className='my-3'
-            >
-              Sign in
-            </Button>
-            <Grid container justifyContent='center'>
-              <Grid item>
-                <Link to='/register'>Not Registered yet? Sign up</Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
+    <>
+      <Grid
+        className='login-form'
+        item
+        xs={6}
+        container
+        justifyContent='center'
+      >
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+            id='standard-required'
+            label='Email Address'
+            autoComplete='email'
+          />
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <TextField
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+            label='Password'
+            id='standard-required'
+            autoComplete='new-password'
+          />
+        </Grid>
+        <Grid container justifyContent='center' item xs={6}>
+          <button onClick={(e) => submitForm(e)} className='login-btn'>
+            Log in
+          </button>
+        </Grid>
+        <Grid container justifyContent='center' item xs={12}>
+          <Link to='/register'>Not Registered yet? Sign up</Link>
+        </Grid>
+      </Grid>
+
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity='error' sx={{ width: '100%' }}>
           {status.msg}
         </Alert>
       </Snackbar>
-      {localStatus && <Redirect to={from} />}
-    </div>
+      {localStatus && <Redirect to={from === '/register' ? '/' : from} />}
+    </>
   );
 };
