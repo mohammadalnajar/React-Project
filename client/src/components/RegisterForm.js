@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
 import { RegisterDoneModal } from './RegisterDoneModal';
 import { GlobalContext } from '../context/global/GlobalContext';
 import TextField from '@mui/material/TextField';
@@ -51,7 +50,6 @@ export const RegisterForm = () => {
         className='register-form'
         item
         xs={6}
-        onSubmit={(e) => registerUser(e, fName, lName, email, password)}
         container
         justifyContent='center'
       >
@@ -82,6 +80,7 @@ export const RegisterForm = () => {
             label='Email'
             variant='standard'
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </Grid>
         <Grid container justifyContent='center' item xs={12}>
@@ -97,7 +96,10 @@ export const RegisterForm = () => {
           />
         </Grid>
         <Grid container justifyContent='center' item xs={6}>
-          <button className='register-btn' type='submit'>
+          <button
+            className='register-btn'
+            onClick={(e) => registerUser(e, fName, lName, email, password)}
+          >
             Register
           </button>
         </Grid>
