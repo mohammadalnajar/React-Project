@@ -21,14 +21,9 @@ export const PayButton = () => {
   };
   return (
     <>
-      <Button
-        onClick={() => paymentHandle()}
-        className='my-3'
-        variant='contained'
-        color='success'
-      >
+      <button onClick={() => paymentHandle()} className='my-3 pay-btn'>
         Pay with credit card
-      </Button>
+      </button>
     </>
   );
 };

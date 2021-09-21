@@ -1,0 +1,36 @@
+.price {
+  color: #43b02a;
+}
+.cart-item,
+.total {
+  font-family: 'tele-bold';
+}
+
+.cart-items-container {
+  min-width: 500px;
+}
+.checkout-btn {
+  font-family: 'tele-bold';
+  width: 100%;
+  background-color: #57aee4;
+  color: white;
+  border: 0;
+  padding: 5px 10px;
+  box-shadow: 0px 5px 1px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.7s ease box-shadow 0.7s ease;
+}
+.checkout-btn:active,
+.checkout-btn:hover,
+.pay-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+.pay-btn {
+  background-color: #5fbc4a;
+  color: #ffff;
+  font-family: 'tele-bold';
+  border: 0;
+  padding: 5px 25px;
+  box-shadow: 0px 5px 1px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.7s ease box-shadow 0.7s ease;
+}

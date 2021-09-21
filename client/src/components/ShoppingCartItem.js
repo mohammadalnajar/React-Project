@@ -8,21 +8,31 @@ export const ShoppingCartItem = ({ item }) => {
   return (
     <>
       {item.quantity > 0 && (
-        <Grid item xs={12}>
-          <Grid container className='m-2'>
+        <Grid item xs={12} className='cart-item'>
+          <Grid container className='my-3'>
             <Grid container justifyContent='center' item xs={4}>
               <img src={item.imageUrl} alt='' style={{ maxHeight: '100px' }} />
             </Grid>
-            <Grid item container xs={8}>
+            <Grid item container xs={8} className='px-2'>
               <Grid item xs={12}>
                 {item.name} {item.storage}
               </Grid>
               <Grid item container alignItems='center' xs={12}>
-                <Grid item xs={6}>
-                  ${item.price}
+                <Grid item xs={6} container justifyContent='space-between'>
+                  <Grid item xs={12} md={6}>
+                    Price:
+                  </Grid>
+                  <Grid item xs={12} className='price' md={3}>
+                    ${item.price}
+                  </Grid>
                 </Grid>
-                <Grid container item xs={3}>
-                  {item.quantity}
+                <Grid container justifyContent='space-between' item xs={3}>
+                  <Grid item xs={12} md={6}>
+                    Quantity:
+                  </Grid>
+                  <Grid item xs={12} md={3}>
+                    {item.quantity}
+                  </Grid>
                 </Grid>
                 <Grid container justifyContent='center' item xs={3}>
                   <IconButton
@@ -41,53 +51,3 @@ export const ShoppingCartItem = ({ item }) => {
     </>
   );
 };
-
-// import Badge from '@mui/material/Badge';
-// import AddIcon from '@mui/icons-material/Add';
-// import { styled } from '@mui/material/styles';
-// import { GlobalContext } from '../context/global/GlobalContext';
-// const Count = ({ itemCount, itemId }) => {
-//   const [count, setCount] = useState(itemCount);
-//   const { setItemCount } = useContext(GlobalContext);
-
-//   const StyledBadge = styled(Badge)(({ theme }) => ({
-//     '& .MuiBadge-badge': {
-//       right: 8,
-//       top: -10,
-//       position: 'relative',
-//     },
-//   }));
-
-//   return (
-//     <>
-//       <Grid container item justifyContent='center' xs={12}>
-//         <Grid item xs={4}>
-//           <button
-//             aria-label='reduce'
-//             onClick={() => {
-//               setCount(Math.max(count - 1, 0));
-//               setItemCount({ count, itemId });
-//             }}
-//           >
-//             -
-//           </button>
-//         </Grid>
-//         <Grid item container justifyContent='center' xs={4}>
-//           <Grid item xs={12}>
-//             <StyledBadge color='secondary' badgeContent={count} />
-//           </Grid>
-//         </Grid>
-
-//         <Grid item xs={4}>
-//           <AddIcon
-//             aria-label='increase'
-//             onClick={() => {
-//               setCount(count + 1);
-//               setItemCount({ count, itemId });
-//             }}
-//           />
-//         </Grid>
-//       </Grid>
-//     </>
-//   );
-// };

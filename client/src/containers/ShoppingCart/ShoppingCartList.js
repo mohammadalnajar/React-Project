@@ -6,7 +6,7 @@ import { LoginButton } from '../../components/LoginButton';
 import { PayButton } from '../../components/PayButton';
 import { ShoppingCartItem } from '../../components/ShoppingCartItem';
 import { GlobalContext } from '../../context/global/GlobalContext';
-
+import '../../Styles/ShoppingCart.css';
 export const ShoppingCartList = ({ page }) => {
   const { shoppingCartItems, status } = useContext(GlobalContext);
   const totalPrice = shoppingCartItems
@@ -17,7 +17,7 @@ export const ShoppingCartList = ({ page }) => {
 
   return (
     <>
-      <Grid container justifyContent='center'>
+      <Grid container justifyContent='center' className='cart-item'>
         <Grid container item xs={12} justifyContent='center'>
           {/* check if cart not empty */}
           {shoppingCartItems[0]._id.length !== 0 ? (
@@ -25,30 +25,43 @@ export const ShoppingCartList = ({ page }) => {
               {shoppingCartItems.map((item) => (
                 <ShoppingCartItem key={item._id} item={item} />
               ))}
-              <Grid container item xs={12}>
+              <Grid container item xs={12} className='total'>
                 <Grid item xs={4}></Grid>
                 <Grid item xs={8} container justifyContent='flex-start'>
                   <Grid item xs={3} container justifyContent='flex-start'>
                     Total:
                   </Grid>
-                  <Grid item xs={3} container justifyContent='flex-start'>
+                  <Grid
+                    item
+                    xs={3}
+                    container
+                    className='price'
+                    justifyContent='flex-start'
+                  >
                     ${totalPrice}
                   </Grid>
                 </Grid>
               </Grid>
               <Grid container justifyContent='center' item xs={12}>
-                <Grid item>
+                <Grid item container justifyContent='center'>
                   {/* check if we are in small cart tooltip */}
                   {page === 'SmallShoppingCart' ? (
-                    <Link to='cart'>
-                      <Button>Go to Checkout</Button>
-                    </Link>
+                    <Grid item xs={12}>
+                      <Link to='cart'>
+                        <button className='checkout-btn'>Go to Checkout</button>{' '}
+                      </Link>
+                    </Grid>
                   ) : status.loggedIn && page === 'CheckOutPage' ? (
                     <>
-                      <PayButton />
-                      <Grid>
-                        For Testing
-                        <br /> card: 4242 4242 4242 4242 <br /> cvc: 424
+                      <Grid item xs={12} container justifyContent='center'>
+                        <Grid item container justifyContent='center' xs={12}>
+                          <PayButton />
+                        </Grid>
+
+                        <Grid item container justifyContent='center' xs={12}>
+                          For Testing
+                          <br /> card: 4242 4242 4242 4242 <br /> cvc: 424
+                        </Grid>
                       </Grid>
                     </>
                   ) : (
@@ -59,19 +72,27 @@ export const ShoppingCartList = ({ page }) => {
             </>
           ) : (
             <>
-              <Grid item xs={12} container justifyContent='center'>
+              <Grid
+                item
+                xs={12}
+                container
+                justifyContent='center'
+                className='my-4'
+              >
                 <Grid item container justifyContent='center' xs={12}>
                   <p>Your Cart is empty</p>
                 </Grid>
                 <Grid item container justifyContent='center' xs={12}>
                   {page === 'CheckOutPage' ? (
                     <Link to='/shop'>
-                      <Button>Go to shop</Button>
+                      <button className='checkout-btn'>Go to shop</button>
                     </Link>
                   ) : (
-                    <Link to='/cart'>
-                      <Button>Go to Checkout</Button>
-                    </Link>
+                    <Grid item xs={12}>
+                      <Link to='/cart'>
+                        <button className='checkout-btn'>Go to Checkout</button>
+                      </Link>
+                    </Grid>
                   )}
                 </Grid>
               </Grid>

@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { GlobalContext } from '../context/global/GlobalContext';
 import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
+import '../Styles/ShoppingCart.css';
 
 export const ShoppingCart = () => {
   const { shoppingCartItems } = useContext(GlobalContext);
@@ -34,6 +35,7 @@ export const ShoppingCart = () => {
       maxWidth: 220,
       fontSize: theme.typography.pxToRem(12),
       border: '1px solid #dadde9',
+      minWidth: '400px',
       boxShadow: '1px 3px 10px 3px rgba(0, 0, 0,0.2)',
     },
   }));
