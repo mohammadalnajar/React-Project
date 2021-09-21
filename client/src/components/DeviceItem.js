@@ -6,7 +6,14 @@ import '../Styles/DeviceItem.css';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
-    <Grid className='device' item xs={4} style={{ minHeight: '330px' }}>
+    <Grid
+      className='device'
+      item
+      xs={12}
+      md={6}
+      lg={4}
+      style={{ minHeight: '330px' }}
+    >
       <Grid className={`${classes.deviceContainer} m-2  p-2`}>
         <Grid container alignItems='stretch'>
           <Grid item xs={12} container justifyContent='center'>
@@ -24,7 +31,13 @@ export const DeviceItem = ({ device }) => {
             </Grid>
           </Grid>
           <Grid justifyContent='flex-end' className={'m-2'} container item>
-            <AddToCart device={device} />
+            <AddToCart
+              text='Add to Cart'
+              device={device}
+              classNameStyle='add-btn'
+              bgColor='#57aee4'
+              textColor='#FFFFFF'
+            />
           </Grid>
         </Grid>
       </Grid>
