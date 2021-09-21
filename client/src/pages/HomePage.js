@@ -10,7 +10,7 @@ export const HomePage = () => {
   }, []);
   return (
     <>
-      <Grid container>
+      <Grid container style={{ paddingBottom: '50px' }}>
         {devices
           .sort((a, b) => (a.name < b.name ? 1 : -1))
           .map((device) => {

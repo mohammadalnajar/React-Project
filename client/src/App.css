@@ -13,3 +13,10 @@
   src: url('./assets//fonts/Tele2SlabWeb-Heavy.woff2') format('woff2'),
     url('./assets//fonts/Tele2SlabWeb-Heavy.woff') format('woff');
 }
+
+body,
+html,
+#root {
+  min-height: 100vh;
+  position: relative;
+}
