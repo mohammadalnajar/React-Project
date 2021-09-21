@@ -38,7 +38,7 @@ function App() {
         <Route exact path='/cart' component={CheckOutPage} />
         <Route exact path='/success' component={SuccessPage} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

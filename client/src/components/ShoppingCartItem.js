@@ -22,15 +22,15 @@ export const ShoppingCartItem = ({ item }) => {
                   <Grid item xs={12} md={6}>
                     Price:
                   </Grid>
-                  <Grid item xs={12} className='price' md={3}>
+                  <Grid item xs={12} className='price' md={6}>
                     ${item.price}
                   </Grid>
                 </Grid>
                 <Grid container justifyContent='space-between' item xs={3}>
-                  <Grid item xs={12} md={6}>
+                  <Grid item xs={12}>
                     Quantity:
                   </Grid>
-                  <Grid item xs={12} md={3}>
+                  <Grid item xs={3}>
                     {item.quantity}
                   </Grid>
                 </Grid>
