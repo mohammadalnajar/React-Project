@@ -95,7 +95,7 @@ export const RegisterForm = () => {
             variant='standard'
           />
         </Grid>
-        <Grid container justifyContent='center' item xs={6}>
+        <Grid container justifyContent='center' item xs={12}>
           <button
             className='register-btn'
             onClick={(e) => registerUser(e, fName, lName, email, password)}
@@ -126,7 +126,14 @@ export const RegisterForm = () => {
           setRegistered(true);
         }}
       />
-      {registered && <Redirect to='/login' />}
+      {registered && (
+        <Redirect
+          to={{
+            pathname: '/login',
+            state: { from: location.pathname },
+          }}
+        />
+      )}
     </>
   );
 };

@@ -18,8 +18,10 @@ export const Header = ({ page }) => {
         <div>Your Shop Cart</div>
       ) : page === 'RegisterPage' ? (
         <div>Register</div>
-      ) : (
+      ) : page === 'LoginPage' ? (
         <div>Login </div>
+      ) : (
+        <div>Payment Succeeded</div>
       )}
       <div></div>
     </div>

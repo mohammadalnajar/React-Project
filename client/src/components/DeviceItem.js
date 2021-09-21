@@ -6,16 +6,9 @@ import '../Styles/DeviceItem.css';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
-    <Grid
-      className='device'
-      item
-      xs={12}
-      md={6}
-      lg={4}
-      style={{ minHeight: '330px' }}
-    >
+    <Grid className='device' item xs={12} md={6} lg={4}>
       <Grid className={`${classes.deviceContainer} m-2  p-2`}>
-        <Grid container alignItems='stretch'>
+        <Grid container style={{ minHeight: '330px' }}>
           <Grid item xs={12} container justifyContent='center'>
             <img src={device.imageUrl} alt='not found' width='100px' />
           </Grid>

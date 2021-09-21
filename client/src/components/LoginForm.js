@@ -81,6 +81,7 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             required
+            type='password'
             label='Password'
             id='standard-required'
             autoComplete='new-password'

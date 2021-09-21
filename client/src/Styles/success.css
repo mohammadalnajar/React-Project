@@ -1,12 +1,14 @@
 .main-container {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
-
+.success-msg {
+  padding: 20px 0px;
+  font-family: 'tele-reg';
+}
 .check-container {
   width: 6.25rem;
   height: 7.5rem;

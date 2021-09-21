@@ -1,5 +1,5 @@
 .register-btn {
-  width: 100%;
+  min-width: 200px;
   border: 0;
   background-color: #50a0df;
   color: #ffff;
