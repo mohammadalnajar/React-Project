@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'tele-bold';
+  src: url('./assets//fonts/Tele2SlabWeb-Bold.woff2') format('woff2'),
+    url('./assets//fonts/Tele2SlabWeb-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'tele-reg';
+  src: url('./assets//fonts/Tele2SlabWeb-Regular.woff2') format('woff2'),
+    url('./assets//fonts/Tele2SlabWeb-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'tele-heavy';
+  src: url('./assets//fonts/Tele2SlabWeb-Heavy.woff2') format('woff2'),
+    url('./assets//fonts/Tele2SlabWeb-Heavy.woff') format('woff');
+}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/global/GlobalContext';
+import { Grid } from '@material-ui/core';
 
 export const AddToCart = ({ device }) => {
   const { addItemToCart } = useContext(GlobalContext);
@@ -20,5 +21,13 @@ export const AddToCart = ({ device }) => {
     storage: storage[0],
     quantity: 1,
   };
-  return <button onClick={() => addItemToCart(item)}>+</button>;
+  return (
+    <>
+      <Grid item xs={12}>
+        <button className='add-btn' onClick={() => addItemToCart(item)}>
+          Add to Cart
+        </button>
+      </Grid>
+    </>
+  );
 };

@@ -20,7 +20,7 @@ exports.paymentHandle = async (req, res) => {
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: purchasedItems,
-      success_url: `http://localhost:3000/shop`,
+      success_url: `http://localhost:3000/success`,
       cancel_url: `http://localhost:3000/cart`,
     });
     res.json({ url: session.url });

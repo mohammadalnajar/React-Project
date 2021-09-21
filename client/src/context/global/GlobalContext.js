@@ -58,7 +58,7 @@ export const GlobalProvider = ({ children }) => {
       type: 'LOGOUT',
       payload: initialState,
     });
-    localStorage.clear();
+    localStorage.removeItem('user');
   };
 
   // set User
@@ -72,7 +72,13 @@ export const GlobalProvider = ({ children }) => {
       });
     }
   };
-
+  // reload shoppingCartItems from localStorage
+  const reloadCartItems = (itemsArray) => {
+    dispatch({
+      type: 'RELOAD_CART_ITEMS',
+      payload: itemsArray,
+    });
+  };
   // get all devices
   const getDevices = async () => {
     try {
@@ -91,17 +97,56 @@ export const GlobalProvider = ({ children }) => {
 
   // add to shopping cart
   const addItemToCart = (item) => {
+    for (let i = 0; i < state.shoppingCartItems.length; i++) {
+      if (state.shoppingCartItems[i]._id === item._id) {
+        state.shoppingCartItems[i].quantity++;
+        break;
+      } else if (i === state.shoppingCartItems.length - 1) {
+        state.shoppingCartItems.push(item);
+        break;
+      } else {
+        continue;
+      }
+    }
     dispatch({
       type: 'ADD_ITEM_TO_CART',
       payload: item,
     });
+
+    const shoppingCartItems = state.shoppingCartItems.filter(
+      (item) => item._id.length !== 0
+    );
+    localStorage.setItem(
+      'shoppingCartItems',
+      JSON.stringify(shoppingCartItems)
+    );
   };
   // del item from shopping cart
   const delItemCart = (item) => {
+    // this is to avoid array.methods errors (keeping the array not empty)
+    if (state.shoppingCartItems.length === 1) {
+      state.shoppingCartItems.push(initialState.shoppingCartItems[0]);
+    }
     dispatch({
       type: 'DEL_ITEM_CART',
       payload: item,
     });
+    const shoppingCartItems = state.shoppingCartItems.filter(
+      (stateItem) => stateItem._id !== item._id
+    );
+    localStorage.setItem(
+      'shoppingCartItems',
+      JSON.stringify(shoppingCartItems)
+    );
+  };
+
+  // reset cart items
+  const resetCartItems = () => {
+    dispatch({
+      type: 'RESET_CART_ITEMS',
+      payload: initialState.shoppingCartItems,
+    });
+    localStorage.removeItem('shoppingCartItems');
   };
   return (
     <GlobalContext.Provider
@@ -117,6 +162,8 @@ export const GlobalProvider = ({ children }) => {
         getDevices,
         addItemToCart,
         delItemCart,
+        reloadCartItems,
+        resetCartItems,
       }}
     >
       {children}

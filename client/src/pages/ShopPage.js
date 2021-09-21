@@ -3,6 +3,7 @@ import { DeviceItem } from '../components/DeviceItem';
 import { Grid } from '@material-ui/core';
 import { SearchBar } from '../components/SearchBar';
 import { FilterItems } from '../containers/filter/FilterItems';
+import { Header } from '../components/Header';
 
 export const ShopPage = ({ devicesGlobal }) => {
   const [devices, setDevices] = useState(devicesGlobal);
@@ -11,6 +12,8 @@ export const ShopPage = ({ devicesGlobal }) => {
   }, [devicesGlobal]);
   return (
     <>
+      <Header page='ShopPage' />
+
       <Grid container>
         <Grid container item xs={12}>
           <Grid item xs={3} />

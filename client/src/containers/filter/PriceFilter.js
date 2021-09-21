@@ -4,6 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { Grid } from '@material-ui/core';
 
 export const PriceFilter = ({ devices, setDevices, devicesGlobal }) => {
   const [checked, setChecked] = useState([]);
@@ -45,57 +46,113 @@ export const PriceFilter = ({ devices, setDevices, devicesGlobal }) => {
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
         <FormLabel>Price:</FormLabel>
         <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                sx={{
-                  color: '#c5c5c5',
-                  '&.Mui-checked': {
-                    color: '#50A0DF',
-                  },
-                }}
-                size='small'
-                onChange={handleChange}
-                name='expensive'
-                value='expensive'
+          <Grid container alignItems='center' justifyContent='center'>
+            <Grid item xs={8}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: '#c5c5c5',
+                      '&.Mui-checked': {
+                        color: '#50A0DF',
+                      },
+                    }}
+                    size='small'
+                    onChange={handleChange}
+                    name='expensive'
+                    value='expensive'
+                  />
+                }
+                label='More than $650'
               />
-            }
-            label='More than $650'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                sx={{
-                  color: '#c5c5c5',
-                  '&.Mui-checked': {
-                    color: '#50A0DF',
-                  },
-                }}
-                size='small'
-                onChange={handleChange}
-                name='normal'
-                value='normal'
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              container
+              justifyContent='flex-end'
+              style={{ color: '#9C9C9C' }}
+            >
+              {
+                devicesGlobal.filter((device) => {
+                  if (device.price > 650) {
+                    return device;
+                  }
+                  return false;
+                }).length
+              }
+            </Grid>
+            <Grid item xs={8}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: '#c5c5c5',
+                      '&.Mui-checked': {
+                        color: '#50A0DF',
+                      },
+                    }}
+                    size='small'
+                    onChange={handleChange}
+                    name='normal'
+                    value='normal'
+                  />
+                }
+                label='Between $300 and $650'
               />
-            }
-            label='Between $300 and $650'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                sx={{
-                  color: '#c5c5c5',
-                  '&.Mui-checked': {
-                    color: '#50A0DF',
-                  },
-                }}
-                size='small'
-                onChange={handleChange}
-                name='cheap'
-                value='cheap'
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              container
+              justifyContent='flex-end'
+              style={{ color: '#9C9C9C' }}
+            >
+              {
+                devicesGlobal.filter((device) => {
+                  if (device.price < 650 && device.price > 300) {
+                    return device;
+                  }
+                  return false;
+                }).length
+              }
+            </Grid>
+            <Grid item xs={8}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: '#c5c5c5',
+                      '&.Mui-checked': {
+                        color: '#50A0DF',
+                      },
+                    }}
+                    size='small'
+                    onChange={handleChange}
+                    name='cheap'
+                    value='cheap'
+                  />
+                }
+                label='To $300'
               />
-            }
-            label='To $300'
-          />
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              container
+              justifyContent='flex-end'
+              style={{ color: '#9C9C9C' }}
+            >
+              {
+                devicesGlobal.filter((device) => {
+                  if (device.price < 301) {
+                    return device;
+                  }
+                  return false;
+                }).length
+              }
+            </Grid>
+          </Grid>
         </FormGroup>
       </FormControl>
     </>
