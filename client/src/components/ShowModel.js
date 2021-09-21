@@ -19,16 +19,17 @@ export const ShowModel = ({
         style={{
           backgroundColor: priColor,
           color: secColor,
-          maxHeight: '300px',
+          //   maxHeight: '300px',
         }}
         className='show-model px-5'
       >
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
           container
+          justifyContent='center'
           className='p-3'
-          style={{ maxHeight: '300px', maxWidth: '80%' }}
         >
           <Grid item xs={12} container>
             <Grid item xs={12}>
@@ -48,7 +49,7 @@ export const ShowModel = ({
               </ul>
             </Grid>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <AddToCart
               text='Order Now'
               device={device}
@@ -58,7 +59,14 @@ export const ShowModel = ({
             />
           </Grid>
         </Grid>
-        <Grid item xs={6} style={{ maxHeight: '300px' }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          container
+          justifyContent='center'
+          style={{ maxHeight: '300px' }}
+        >
           <img
             className='py-3'
             src={imageUrl}
