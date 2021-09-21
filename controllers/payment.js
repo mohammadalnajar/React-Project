@@ -20,8 +20,8 @@ exports.paymentHandle = async (req, res) => {
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: purchasedItems,
-      success_url: `http://localhost:3000/success`,
-      cancel_url: `http://localhost:3000/cart`,
+      success_url: `https://teleshop-97.herokuapp.com/success`,
+      cancel_url: `https://teleshop-97.herokuapp.com//cart`,
     });
     res.json({ url: session.url });
   } catch (error) {
