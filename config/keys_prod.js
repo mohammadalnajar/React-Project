@@ -1,4 +1,4 @@
 module.exports = {
   MONGODB_URL: process.env.MONGODB_URL,
-  API_KEY: process.env.API_KEY,
+  STRIPE_PRIVATE_KEY: process.env.STRIPE_PRIVATE_KEY,
 };
