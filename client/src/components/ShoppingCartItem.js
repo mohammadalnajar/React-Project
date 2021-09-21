@@ -14,10 +14,10 @@ export const ShoppingCartItem = ({ item }) => {
               <img src={item.imageUrl} alt='' style={{ maxHeight: '100px' }} />
             </Grid>
             <Grid item container xs={8}>
-              <Grid className='m-2' item xs={12}>
+              <Grid item xs={12}>
                 {item.name} {item.storage}
               </Grid>
-              <Grid className='m-2' item container alignItems='center' xs={12}>
+              <Grid item container alignItems='center' xs={12}>
                 <Grid item xs={6}>
                   ${item.price}
                 </Grid>

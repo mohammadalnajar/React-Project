@@ -27,9 +27,13 @@ export const ShoppingCartList = ({ page }) => {
               ))}
               <Grid container item xs={12}>
                 <Grid item xs={4}></Grid>
-                <Grid item xs={8}>
-                  {' '}
-                  Total:${totalPrice}
+                <Grid item xs={8} container justifyContent='flex-start'>
+                  <Grid item xs={3} container justifyContent='flex-start'>
+                    Total:
+                  </Grid>
+                  <Grid item xs={3} container justifyContent='flex-start'>
+                    ${totalPrice}
+                  </Grid>
                 </Grid>
               </Grid>
               <Grid container justifyContent='center' item xs={12}>
@@ -40,7 +44,13 @@ export const ShoppingCartList = ({ page }) => {
                       <Button>Go to Checkout</Button>
                     </Link>
                   ) : status.loggedIn && page === 'CheckOutPage' ? (
-                    <PayButton />
+                    <>
+                      <PayButton />
+                      <Grid>
+                        For Testing
+                        <br /> card: 4242 4242 4242 4242 <br /> cvc: 424
+                      </Grid>
+                    </>
                   ) : (
                     <LoginButton page={page} />
                   )}
