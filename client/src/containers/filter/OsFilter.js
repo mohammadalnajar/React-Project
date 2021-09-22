@@ -38,48 +38,50 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
         <FormLabel>OS:</FormLabel>
         <FormGroup>
-          {operationSystems.length > 0 &&
-            operationSystems.map((os) => (
-              <Grid
-                key={os}
-                container
-                alignItems='center'
-                justifyContent='center'
-              >
-                <Grid item xs={8}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        sx={{
-                          color: '#c5c5c5',
-                          '&.Mui-checked': {
-                            color: '#50A0DF',
-                          },
-                        }}
-                        size='small'
-                        onChange={handleChange}
-                        name={os}
-                        value={os}
-                      />
-                    }
-                    label={os}
-                  />{' '}
-                </Grid>
+          <Grid container alignItems='center' justifyContent='center'>
+            {operationSystems.length > 0 &&
+              operationSystems.map((os) => (
                 <Grid
-                  item
-                  xs={4}
+                  key={os}
                   container
-                  justifyContent='flex-end'
-                  style={{ color: '#9C9C9C' }}
+                  alignItems='center'
+                  justifyContent='center'
                 >
-                  {
-                    devicesGlobal.filter((device) => {
-                      return device.specs.platform.OS === os;
-                    }).length
-                  }
+                  <Grid item xs={8}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          sx={{
+                            color: '#c5c5c5',
+                            '&.Mui-checked': {
+                              color: '#50A0DF',
+                            },
+                          }}
+                          size='small'
+                          onChange={handleChange}
+                          name={os}
+                          value={os}
+                        />
+                      }
+                      label={os}
+                    />{' '}
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent='flex-end'
+                    style={{ color: '#9C9C9C' }}
+                  >
+                    {
+                      devicesGlobal.filter((device) => {
+                        return device.specs.platform.OS === os;
+                      }).length
+                    }
+                  </Grid>
                 </Grid>
-              </Grid>
-            ))}
+              ))}
+          </Grid>
         </FormGroup>
       </FormControl>
     </>

@@ -14,7 +14,7 @@ export const ShopPage = ({ devicesGlobal }) => {
     <>
       <Header page='ShopPage' />
 
-      <Grid container>
+      <Grid container style={{ paddingBottom: '50px' }}>
         <Grid container item xs={12}>
           <Grid item xs={3} />
           <Grid container item xs={9} alignItems='flex-start'>
