@@ -3,8 +3,20 @@ import React, { useContext } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { GlobalContext } from '../context/global/GlobalContext';
+import { useSnackbar } from 'notistack';
+
 export const ShoppingCartItem = ({ item }) => {
   const { delItemCart } = useContext(GlobalContext);
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleDelFromCart = (variant) => () => {
+    delItemCart(item);
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar(`The ${item.name} is deleted from your shop cart!`, {
+      variant,
+    });
+  };
+
   return (
     <>
       {item.quantity > 0 && (
@@ -36,7 +48,7 @@ export const ShoppingCartItem = ({ item }) => {
                 </Grid>
                 <Grid container justifyContent='center' item xs={3}>
                   <IconButton
-                    onClick={() => delItemCart(item)}
+                    onClick={handleDelFromCart('error')}
                     aria-label='delete'
                     size='small'
                   >
