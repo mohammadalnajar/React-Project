@@ -3,6 +3,7 @@ import { AddToCart } from './AddToCart';
 import { Grid } from '@material-ui/core';
 import { useStyles } from '../Styles/ClassesForStyles';
 import '../Styles/DeviceItem.css';
+import { InfoToolTip } from './InfoToolTip';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
@@ -32,6 +33,9 @@ export const DeviceItem = ({ device }) => {
               textColor='#FFFFFF'
             />
           </Grid>
+          <InfoToolTip title='add'>
+            <button className='info-tool-tip'>info</button>
+          </InfoToolTip>
         </Grid>
       </Grid>
     </Grid>

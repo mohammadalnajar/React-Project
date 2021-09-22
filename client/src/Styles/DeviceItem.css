@@ -17,3 +17,9 @@
   transform: translateY(2px);
   box-shadow: none;
 }
+.info-tool-tip {
+  position: relative;
+  background-color: red;
+  bottom: 100px;
+  right: -10px;
+}
