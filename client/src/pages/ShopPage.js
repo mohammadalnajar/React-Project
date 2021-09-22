@@ -4,24 +4,31 @@ import { Grid } from '@material-ui/core';
 import { SearchBar } from '../components/SearchBar';
 import { FilterItems } from '../containers/filter/FilterItems';
 import { Header } from '../components/Header';
-
-export const ShopPage = ({ devicesGlobal }) => {
-  const [devices, setDevices] = useState(devicesGlobal);
+import { ScrollTop } from '../components/ScrolToTop';
+import Fab from '@mui/material/Fab';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Toolbar from '@mui/material/Toolbar';
+export const ShopPage = (props) => {
+  const [devices, setDevices] = useState(props.devicesGlobal);
   useEffect(() => {
-    setDevices(devicesGlobal);
-  }, [devicesGlobal]);
+    setDevices(props.devicesGlobal);
+  }, [props.devicesGlobal]);
   return (
     <>
       <Header page='ShopPage' />
+      <Toolbar
+        id='back-to-top-anchor'
+        style={{ maxHeight: '0px', minHeight: '0px' }}
+      />
 
-      <Grid container style={{ paddingBottom: '50px' }}>
+      <Grid container style={{ paddingBottom: '60px' }}>
         <Grid container item xs={12}>
           <Grid item xs={3} />
           <Grid container item xs={9} alignItems='flex-start'>
             <SearchBar
               devices={devices}
               setDevices={setDevices}
-              devicesGlobal={devicesGlobal}
+              devicesGlobal={props.devicesGlobal}
             />
           </Grid>
         </Grid>
@@ -30,7 +37,7 @@ export const ShopPage = ({ devicesGlobal }) => {
             <FilterItems
               devices={devices}
               setDevices={setDevices}
-              devicesGlobal={devicesGlobal}
+              devicesGlobal={props.devicesGlobal}
             />
           </Grid>
           <Grid item container xs={9} justifyContent='flex-start'>
@@ -40,6 +47,11 @@ export const ShopPage = ({ devicesGlobal }) => {
               })}
           </Grid>
         </Grid>
+        <ScrollTop {...props}>
+          <Fab color='secondary' size='small' aria-label='scroll back to top'>
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
       </Grid>
     </>
   );
