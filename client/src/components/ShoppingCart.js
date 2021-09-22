@@ -8,7 +8,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { GlobalContext } from '../context/global/GlobalContext';
 import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
 import '../Styles/ShoppingCart.css';
-
+// import ClickAwayListener from '@mui/material/ClickAwayListener';
 export const ShoppingCart = () => {
   const { shoppingCartItems } = useContext(GlobalContext);
 
@@ -27,7 +27,7 @@ export const ShoppingCart = () => {
   }));
 
   const ShoppingCartTooltip = styled(({ className, ...props }) => (
-    <Tooltip disableFocusListener {...props} classes={{ popper: className }} />
+    <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: '#f5f5f9',
@@ -42,6 +42,7 @@ export const ShoppingCart = () => {
 
   return (
     <ShoppingCartTooltip
+      enterTouchDelay={10}
       title={<ShoppingCartList page='SmallShoppingCart' />}
       placement='bottom-start'
     >
