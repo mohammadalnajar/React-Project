@@ -4,12 +4,15 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { GlobalProvider } from './context/global/GlobalContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { SnackbarProvider } from 'notistack';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalProvider>
       <Router>
-        <App />
+        <SnackbarProvider>
+          <App />
+        </SnackbarProvider>
       </Router>
     </GlobalProvider>
   </React.StrictMode>,
