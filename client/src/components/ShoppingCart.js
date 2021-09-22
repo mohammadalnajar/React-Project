@@ -43,6 +43,7 @@ export const ShoppingCart = () => {
   return (
     <ShoppingCartTooltip
       enterTouchDelay={10}
+      leaveTouchDelay={4000}
       title={<ShoppingCartList page='SmallShoppingCart' />}
       placement='bottom-start'
     >
