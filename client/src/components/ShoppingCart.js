@@ -27,7 +27,7 @@ export const ShoppingCart = () => {
   }));
 
   const ShoppingCartTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }} />
+    <Tooltip disableFocusListener {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: '#f5f5f9',
