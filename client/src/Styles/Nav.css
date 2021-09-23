@@ -1,5 +1,6 @@
 .nav {
   font-family: 'tele-bold';
+  border-top: 2px solid #50a0df;
 }
 .nav-list {
   list-style-type: none;

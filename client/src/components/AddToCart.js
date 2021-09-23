@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/global/GlobalContext';
 import { Grid } from '@material-ui/core';
-
+import { useSnackbar } from 'notistack';
 export const AddToCart = ({
   device,
   text,
@@ -27,6 +27,16 @@ export const AddToCart = ({
     storage: storage[0],
     quantity: 1,
   };
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleAddToCart = (variant) => () => {
+    addItemToCart(item);
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar(`The ${item.name} is added to your shop cart!`, {
+      variant,
+    });
+  };
+
   return (
     <>
       <Grid item xs={12}>
@@ -36,7 +46,7 @@ export const AddToCart = ({
             color: textColor.length > 0 ? textColor : 'black',
           }}
           className={classNameStyle}
-          onClick={() => addItemToCart(item)}
+          onClick={handleAddToCart('success')}
         >
           {text}
         </button>

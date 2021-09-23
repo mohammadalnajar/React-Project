@@ -52,11 +52,9 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
 
   //* to know from which path is the user coming from
   const {
-    location: {
-      state: { from },
-    },
+    location: { state },
   } = useHistory();
-  console.log(from);
+
   return (
     <>
       <Grid
@@ -102,7 +100,15 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
           {status.msg}
         </Alert>
       </Snackbar>
-      {localStatus && <Redirect to={from === '/register' ? '/' : from} />}
+      {localStatus && (
+        <Redirect
+          to={
+            state.from !== undefined && state.from === '/register'
+              ? '/'
+              : state.from
+          }
+        />
+      )}
     </>
   );
 };

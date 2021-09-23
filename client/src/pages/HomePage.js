@@ -3,14 +3,23 @@ import { ShowModel } from '../components/ShowModel';
 import { GlobalContext } from '../context/global/GlobalContext';
 import iphone13img from '../assets/images/iphone_13.png';
 import { Grid } from '@material-ui/core';
-export const HomePage = () => {
+import Fab from '@mui/material/Fab';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Toolbar from '@mui/material/Toolbar';
+import { ScrollTop } from '../components/ScrolToTop';
+export const HomePage = (props) => {
   const { devices, getDevices } = useContext(GlobalContext);
   useEffect(() => {
     getDevices();
   }, []);
   return (
     <>
-      <Grid container>
+      {' '}
+      <Toolbar
+        id='back-to-top-anchor'
+        style={{ maxHeight: '0px', minHeight: '0px' }}
+      />
+      <Grid container style={{ paddingBottom: '50px' }}>
         {devices
           .sort((a, b) => (a.name < b.name ? 1 : -1))
           .map((device) => {
@@ -51,6 +60,11 @@ export const HomePage = () => {
               );
             }
           })}
+        <ScrollTop {...props}>
+          <Fab color='secondary' size='small' aria-label='scroll back to top'>
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
       </Grid>
     </>
   );

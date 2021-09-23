@@ -3,6 +3,9 @@ import { AddToCart } from './AddToCart';
 import { Grid } from '@material-ui/core';
 import { useStyles } from '../Styles/ClassesForStyles';
 import '../Styles/DeviceItem.css';
+import { InfoToolTip } from './InfoToolTip';
+import { BsInfo } from 'react-icons/bs';
+import { DeviceInfo } from './DeviceInfo';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
@@ -23,7 +26,7 @@ export const DeviceItem = ({ device }) => {
               ${device.price}-
             </Grid>
           </Grid>
-          <Grid justifyContent='flex-end' className={'m-2'} container item>
+          <Grid justifyContent='flex-end' container item>
             <AddToCart
               text='Add to Cart'
               device={device}
@@ -31,6 +34,13 @@ export const DeviceItem = ({ device }) => {
               bgColor='#57aee4'
               textColor='#FFFFFF'
             />
+          </Grid>
+          <Grid item style={{ position: 'relative' }}>
+            <InfoToolTip title={<DeviceInfo device={device} />}>
+              <button className='info-tool-tip'>
+                <BsInfo className='info-icon' />
+              </button>
+            </InfoToolTip>
           </Grid>
         </Grid>
       </Grid>

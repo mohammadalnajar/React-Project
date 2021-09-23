@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 export const LoginButton = ({ page }) => {
   const classes = useStyles();
   const { location } = useHistory();
-  console.log(location);
   return (
     <>
       {location.pathname === '/login' ? (
@@ -20,11 +19,15 @@ export const LoginButton = ({ page }) => {
           }}
           className={classes.link}
         >
-          <Button className={`${classes.btn} btn`} startIcon={<LoginIcon />}>
-            {location.pathname === '/cart' && page === 'CheckOutPage'
-              ? 'Please Login to Pay'
-              : 'Log in'}
-          </Button>
+          {location.pathname === '/cart' && page === 'CheckOutPage' ? (
+            <button className='login-checkout' startIcon={<LoginIcon />}>
+              Please Login to Pay
+            </button>
+          ) : (
+            <Button className={`${classes.btn} btn`} startIcon={<LoginIcon />}>
+              Log in
+            </Button>
+          )}
         </Link>
       )}
     </>

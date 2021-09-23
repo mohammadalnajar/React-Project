@@ -22,11 +22,13 @@
 }
 .checkout-btn:active,
 .checkout-btn:hover,
-.pay-btn:active {
+.pay-btn:active,
+.login-checkout:hover {
   transform: translateY(2px);
   box-shadow: none;
 }
-.pay-btn {
+.pay-btn,
+.login-checkout {
   background-color: #5fbc4a;
   color: #ffff;
   font-family: 'tele-bold';
@@ -34,4 +36,7 @@
   padding: 5px 25px;
   box-shadow: 0px 5px 1px -1px rgba(0, 0, 0, 0.2);
   transition: transform 0.7s ease box-shadow 0.7s ease;
+}
+.login-checkout {
+  margin: 10px 0;
 }
