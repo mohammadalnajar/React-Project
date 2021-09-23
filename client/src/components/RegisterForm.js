@@ -34,7 +34,6 @@ export const RegisterForm = () => {
         setEmail('');
         setPassword('');
       }
-      console.log(user);
     } catch (error) {
       console.log(error);
     }

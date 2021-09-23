@@ -86,7 +86,6 @@ export const GlobalProvider = ({ children }) => {
         method: 'GET',
       });
       const devices = await response.json();
-      console.log(devices);
       if (devices.length > 0) {
         dispatch({ type: 'SET_DEVICES', payload: devices });
       }

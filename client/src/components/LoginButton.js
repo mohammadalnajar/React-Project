@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 export const LoginButton = ({ page }) => {
   const classes = useStyles();
   const { location } = useHistory();
-  console.log(location);
   return (
     <>
       {location.pathname === '/login' ? (
