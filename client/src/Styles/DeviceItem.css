@@ -18,8 +18,19 @@
   box-shadow: none;
 }
 .info-tool-tip {
-  position: relative;
-  background-color: red;
-  bottom: 100px;
-  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #e0e0e0;
+  bottom: 80px;
+  right: 10px;
+  border-radius: 50%;
+  border: none;
+  height: 45px;
+  width: 45px;
+}
+.info-icon {
+  font-size: 2rem;
+  color: #57aee4;
 }
