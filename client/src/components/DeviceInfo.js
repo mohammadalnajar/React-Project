@@ -13,16 +13,16 @@ export const DeviceInfo = ({ device }) => {
       <Grid container className='p-2'>
         <Grid item xs={6} container className='px-1'>
           <Grid item container xs={12}>
-            <Grid item xs={12} className='py-1'>
+            <Grid item xs={12} className='pt-1'>
               <strong> Display:</strong>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Type: {type}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Size: {size}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Resolution: {resolution}
             </Grid>
           </Grid>
@@ -30,10 +30,10 @@ export const DeviceInfo = ({ device }) => {
             <Grid item xs={12} className='pt-1'>
               <strong> Platform:</strong>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               OS: {OS}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Chipset: {chipSet}
             </Grid>
           </Grid>
@@ -43,10 +43,10 @@ export const DeviceInfo = ({ device }) => {
             <Grid item xs={12} className='pt-1'>
               <strong>Memory:</strong>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Ram: {ram.map((r, i, a) => (a.length < 2 ? r : `${r}, `))}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Storage: {storage.map((r, i, a) => (a.length < 2 ? r : `${r}, `))}
             </Grid>
           </Grid>
@@ -54,17 +54,19 @@ export const DeviceInfo = ({ device }) => {
             <Grid item xs={12} className='pt-1'>
               <strong> Camera:</strong>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Main:{main}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className='pb-1'>
               Selfie:{selfie}
             </Grid>
             <Grid item xs={12}>
               <Grid item xs={12} className='pt-1'>
                 <strong> Battery:</strong>
               </Grid>
-              Capacity: {capacity}
+              <Grid item xs={12} className='pb-1'>
+                Capacity: {capacity}
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
