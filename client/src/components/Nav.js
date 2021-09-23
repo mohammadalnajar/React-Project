@@ -1,6 +1,6 @@
 import { Grid, Button } from '@material-ui/core';
 import React, { useContext } from 'react';
-import { ShoppingCart } from './ShoppingCart';
+import { ShoppingCart } from './ShoppingCart/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { LogoutButton } from './LogoutButton';
 import { LoginButton } from './LoginButton';

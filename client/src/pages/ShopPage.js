@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DeviceItem } from '../components/DeviceItem';
 import { Grid } from '@material-ui/core';
 import { SearchBar } from '../components/SearchBar';
-import { FilterItems } from '../containers/filter/FilterItems';
+import { FilterItems } from '../components/filter/FilterItems';
 import { Header } from '../components/Header';
 import { ScrollTop } from '../components/ScrolToTop';
 import Fab from '@mui/material/Fab';

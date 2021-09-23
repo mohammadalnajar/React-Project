@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddToCart } from './AddToCart';
+import { AddToCart } from './ShoppingCart/AddToCart';
 import { Grid } from '@material-ui/core';
 import { useStyles } from '../Styles/ClassesForStyles';
 import '../Styles/DeviceItem.css';

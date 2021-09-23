@@ -2,9 +2,9 @@ import { Grid } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { LoginButton } from '../../components/LoginButton';
-import { PayButton } from '../../components/PayButton';
-import { ShoppingCartItem } from '../../components/ShoppingCartItem';
+import { LoginButton } from '../LoginButton';
+import { PayButton } from '../PayButton';
+import { ShoppingCartItem } from './ShoppingCartItem';
 import { GlobalContext } from '../../context/global/GlobalContext';
 import '../../Styles/ShoppingCart.css';
 export const ShoppingCartList = ({ page }) => {
