@@ -10,6 +10,7 @@ import { HomePage } from './pages/HomePage';
 import { SuccessPage } from './pages/SuccessPage';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
+import { ControlledOpenSpeedDial } from './components/SocialMedia';
 function App() {
   const { setUser, reloadCartItems } = useContext(GlobalContext);
 
@@ -38,6 +39,7 @@ function App() {
         <Route exact path='/cart' component={CheckOutPage} />
         <Route exact path='/success' component={SuccessPage} />
       </Switch>
+      <ControlledOpenSpeedDial />
       <Footer />
     </>
   );
