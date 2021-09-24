@@ -1,4 +1,4 @@
-# Welcome to teleShop App
+# Welcome to the Full stack MERN teleShop App [Demo](https://teleshop-97.herokuapp.com/)
 
 #### This React project was a part of my study in HackYourFuture institute in Amsterdam
 
@@ -13,19 +13,28 @@
 ### Languages and tools:
 
 #### Frontend:
-- ReactJs
-- Javascript 
-- CSS
-- Material UI library.
+- **ReactJs**
+- **Javascript** 
+- **CSS**
 
 #### Backend:
-- NodeJs
-- ExpressJs
-- MongoDB
+- **NodeJs**
+- **ExpressJs**
+- **MongoDB**
 
+#### Tools and npm:
+- **mongoose**: to work with mongoDb.
+- **bycrpt**: to hash passwords before saving them on database.
+- **Material ui**: for Design.
 #### APIs:
 - Strip API for payments.
 ___
+### Test account:
+
+- email: `test@gmail.com`
+- password: `test123`
+___
+
 In case you want to run the app on your **local machine** follow the next steps please:
 
 - After cloning the code into your machine please do the next steps:
@@ -49,10 +58,58 @@ In case you want to run the app on your **local machine** follow the next steps 
     STRIPE_CANCEL_URL='http://localhost:3000'
 
    ```
-6. In your mongoDB Atlas create a database called react-project
+6. In your mongoDB Atlas create a database called react-project ***(don't forget to
+   include the database name in the mongodb_url)***
 7. Create collection and name it as `Devices`   
 8. Import the `ExampleDevices.json` into your `Devices` collection. 
-9. Back to your terminal and run `npm run dev` in the client folder.
+9. Go back to your terminal and run `cd ../` to go to the root folder.
+10. Finally lunch the app by running => `npm run dev`
    
 ### And that's it, the app now should run successfully on your machine.
+____
+## Folder Structure:
 
+### Frontend:
+```
+client
+ ┗ src
+ ┃ ┣ assets
+ ┃ ┃ ┗ fonts
+ ┃ ┣ components
+ ┃ ┃ ┣ filter                          ## contains the filters logic
+ ┃ ┃ ┣ ShoppingCart                    ## everything related to shoppingCart 
+ ┃ ┃ ┃                                 ## all other components     
+ ┃ ┃ ┃   
+ ┃ ┣ context                           ## contexts                          
+ ┃ ┃ ┗ global
+ ┃ ┃ ┃ ┣ GlobalContext.js
+ ┃ ┃ ┃ ┣ GlobalReducer.js
+ ┃ ┃ ┃ ┗ initialState.js
+ ┃ ┣ pages                             ## contains different main pages
+ ┃ ┣ Styles                            ## Styles for different components
+ ┃ ┣ App.css
+ ┃ ┣ App.js                            ## main app file
+ ┃ ┗ index.js
+```
+
+
+### Backend:
+
+```
+server
+ ┣ assets
+ ┃ ┗ xiaomi-redmi-note10-pro.jpg       ## devices photos
+ ┣ config
+ ┃ ┣ db.js                             ## Database connection
+ ┃ ┣ example.env
+ ┃ ┗ ExampleDevices.json
+ ┣ controllers                         ## endpoints controllers
+ ┣ models                              ## database modals
+ ┣ routes                                 
+ ┣ .gitignore
+ ┣ package-lock.json
+ ┣ package.json
+ ┣ README.md
+ ┣ req.rest                            ## for endpoints testing
+ ┗ server.js                           
+```

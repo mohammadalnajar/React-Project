@@ -119,7 +119,7 @@
         "charging": "Fast charging 15W"
       }
     },
-    "imageUrl": "https://www.tele2.nl/Consumer/media/images/_mobiel/alle-telefoons/samsung/samsung-galaxy-z-flip-3/Creme/dvi-front-back_Samsung_Galaxy_ZFlip3_Creme_305x450.png",
+    "imageUrl": "/assets/samsung_zflip3.png",
     "createdAt": {
       "$date": "2021-09-21T23:31:46.974Z"
     },
