@@ -5,10 +5,32 @@
 #### The app consists of the following parts:
 
 1. **Home page** with show modals
-2. **Shop page** where your find all devices available in our database.
-3. **Check out page** where you can pay using a credit card using Stripe API.
-4. **Sing up page** to register your information in our database.
-5. **Sing in page**.
+   <img src='assets/readME/homepage.png'>
+2. **Shop page** where your find all devices available in our database with
+   filters on brand/os/price and autoComplete search field; and popover to show
+   the device specs ; notifications show up when item added to cart or removed
+   from cart.
+   <div style="display: flex;justify-content:space-around">
+      <img src='assets/readME/shopPageFilter1.png' width='400px'>
+      <img src='assets/readME/shopPageFilter2.png' width='400px'>
+      
+   </div>
+   <div style="display: flex;justify-content:space-around">
+      <img src='assets/readME/shopPageDetails.png' width='400px'>
+      <img src='assets/readME/notifications.png' width='400px'>
+   </div>
+
+3.  **Check out page** where you can pay using a credit card using Stripe API.
+      <img src='assets/readME/checkoutPage.png' width='600px'>
+4.  **Sing up page** to register your information in our database.
+5.  **Sing in page**.
+   <div style="display: flex;justify-content:space-around">
+      <img src='assets/readME/signIn.png' width='400px'>
+      <img src='assets/readME/signUp.png' width='400px'>
+   </div>
+
+6. The App is mobile ***Responsive*** which means everything will fit well at small
+   screens as well.
 
 ### Languages and tools:
 

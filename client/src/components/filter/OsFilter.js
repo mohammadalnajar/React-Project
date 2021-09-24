@@ -35,13 +35,18 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal, bigScreen }) => {
   }, [checked, setDevices, devicesGlobal]);
   return (
     <>
-      <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
+      <FormControl
+        component='fieldset'
+        sx={{ m: 3, display: 'flex' }}
+        variant='standard'
+      >
         {bigScreen ? <FormLabel>OS:</FormLabel> : ''}
         <FormGroup>
-          <Grid container alignItems='center' justifyContent='center'>
+          <Grid container>
             {operationSystems.length > 0 &&
               operationSystems.map((os) => (
                 <Grid
+                  item
                   key={os}
                   container
                   alignItems='center'
@@ -64,7 +69,7 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal, bigScreen }) => {
                         />
                       }
                       label={os}
-                    />{' '}
+                    />
                   </Grid>
                   <Grid
                     item
