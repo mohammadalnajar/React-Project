@@ -5,7 +5,6 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ForumIcon from '@mui/icons-material/Forum';
-
 const actions = [
   {
     icon: (
@@ -39,10 +38,15 @@ export const ControlledOpenSpeedDial = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }}>
+    <Box
+      className='social-icon'
+      sx={{
+        transform: 'translateZ(0px)',
+        flexGrow: 1,
+      }}
+    >
       <SpeedDial
         ariaLabel='Social media'
-        sx={{ position: 'absolute', bottom: 50, left: 16 }}
         icon={<ForumIcon />}
         onClose={handleClose}
         onOpen={handleOpen}
