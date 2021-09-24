@@ -17,7 +17,7 @@ export const useStyles = makeStyles({
     height: '100%',
     fontFamily: 'tele-bold',
   },
-  btn: {
+  button: {
     height: '100%',
     fontFamily: 'tele-bold',
     '&:hover': {
