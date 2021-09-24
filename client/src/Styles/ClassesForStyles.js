@@ -28,6 +28,5 @@ export const useStyles = makeStyles({
   deviceContainer: {
     borderRadius: '5px',
     backgroundColor: '#EEEEEE',
-    // minHeight: '300px',
   },
 });

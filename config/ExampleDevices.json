@@ -1,0 +1,422 @@
+[
+  {
+    "_id": {
+      "$oid": "614a68898c341653c7b23bfe"
+    },
+    "name": "Oppo Reno6 Pro 5G",
+    "brand": "Oppo",
+    "type": "smartphone",
+    "price": 450,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-06-05T00:00:00Z"
+      },
+      "display": {
+        "type": "AMOLED",
+        "size": "6.55 inches",
+        "resolution": "1080 x 2400"
+      },
+      "platform": {
+        "OS": "Android",
+        "chipSet": "MediaTek MT6893",
+        "cpu": "Octa-core (1x3.0 GHz Cortex-A78 & 3x2.6 GHz Cortex-A78 & 4x2.0 GHz Cortex-A55)",
+        "gpu": "Mali-G77 MC9"
+      },
+      "memory": {
+        "ram": ["8GB", "12GB"],
+        "storage": ["128GB", "256GB"]
+      },
+      "camera": {
+        "main": "64 MP",
+        "selfie": "32 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 4500 mAh",
+        "charging": "Fast charging 65W"
+      }
+    },
+    "imageUrl": "/assets/oppo-reno6-pro-5g.jpg",
+    "createdAt": {
+      "$date": "2021-09-21T23:19:37.908Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614a69c08c341653c7b23c04"
+    },
+    "name": "Xiaomi Redmi Note 10 Pro",
+    "brand": "Xiaomi",
+    "type": "smartphone",
+    "price": 299,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-03-24T00:00:00Z"
+      },
+      "display": {
+        "type": "AMOLED",
+        "size": "6.67 inches",
+        "resolution": "1080 x 2400"
+      },
+      "platform": {
+        "OS": "Android",
+        "chipSet": "Qualcomm SM7150 ",
+        "cpu": "Octa-core (2x2.3 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver)",
+        "gpu": "Adreno 618"
+      },
+      "memory": {
+        "ram": ["6GB", "8GB"],
+        "storage": ["64GB", "128GB"]
+      },
+      "camera": {
+        "main": "108 MP",
+        "selfie": "16 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 5020 mAh",
+        "charging": "Fast charging 33W"
+      }
+    },
+    "imageUrl": "/assets/xiaomi-redmi-note10-pro.jpg",
+    "createdAt": {
+      "$date": "2021-09-21T23:24:48.807Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614a6b628c341653c7b23c08"
+    },
+    "name": "Samsung Galaxy Z Flip 3",
+    "brand": "Samsung",
+    "type": "smartphone",
+    "price": 1100,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-08-27T00:00:00Z"
+      },
+      "display": {
+        "type": "Foldable Dynamic AMOLED 2X",
+        "size": "6.7 inches",
+        "resolution": "1080 x 2640"
+      },
+      "platform": {
+        "OS": "Android 11",
+        "chipSet": "Qualcomm SM8350 ",
+        "cpu": "Octa-core (1x2.84 GHz Kryo 680 & 3x2.42 GHz Kryo 680 & 4x1.80 GHz Kryo 680)",
+        "gpu": "Adreno 660"
+      },
+      "memory": {
+        "ram": ["8GB"],
+        "storage": ["128GB", "256GB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "10 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 3300 mAh",
+        "charging": "Fast charging 15W"
+      }
+    },
+    "imageUrl": "https://www.tele2.nl/Consumer/media/images/_mobiel/alle-telefoons/samsung/samsung-galaxy-z-flip-3/Creme/dvi-front-back_Samsung_Galaxy_ZFlip3_Creme_305x450.png",
+    "createdAt": {
+      "$date": "2021-09-21T23:31:46.974Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614deb7aa719b8fe5439dc16"
+    },
+    "name": "iPhone 13 Pro Max",
+    "brand": "Apple",
+    "type": "smartphone",
+    "price": 1199,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-09-14T00:00:00Z"
+      },
+      "display": {
+        "type": "Super Retina XDR OLED",
+        "size": "6.7 inches",
+        "resolution": "1284 x 2778"
+      },
+      "platform": {
+        "OS": "iOS 15",
+        "chipSet": "Apple A15 Bionic",
+        "cpu": "Hexa-core (2x3.22 GHz + 4xX.X GHz)",
+        "gpu": "Apple GPU"
+      },
+      "memory": {
+        "ram": ["6GB"],
+        "storage": ["128GB", "256GB", "512GB", "1TB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "12 MP"
+      },
+      "battery": {
+        "capacity": "Li-Ion 4373 mAh",
+        "charging": "Fast charging 20W"
+      }
+    },
+    "imageUrl": "/assets/iphone13pro_max.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:15:06.863Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614dec52a719b8fe5439dc19"
+    },
+    "name": "iPhone 13 Pro",
+    "brand": "Apple",
+    "type": "smartphone",
+    "price": 1099,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-09-14T00:00:00Z"
+      },
+      "display": {
+        "type": "Super Retina XDR OLED",
+        "size": "6.1 inches",
+        "resolution": "1170 x 2532"
+      },
+      "platform": {
+        "OS": "iOS 15",
+        "chipSet": "Apple A15 Bionic",
+        "cpu": "Hexa-core (2x3.22 GHz + 4xX.X GHz)",
+        "gpu": "Apple GPU"
+      },
+      "memory": {
+        "ram": ["6GB"],
+        "storage": ["128GB", "256GB", "512GB", "1TB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "12 MP"
+      },
+      "battery": {
+        "capacity": "Li-Ion 3125 mAh",
+        "charging": "Fast charging 20W"
+      }
+    },
+    "imageUrl": "/assets/iphone13pro.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:18:42.470Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614dee19a719b8fe5439dc1f"
+    },
+    "name": "iPhone 13",
+    "brand": "Apple",
+    "type": "smartphone",
+    "price": 899,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-09-14T00:00:00Z"
+      },
+      "display": {
+        "type": "Super Retina XDR OLED",
+        "size": "6.1 inches",
+        "resolution": "1170 x 2532"
+      },
+      "platform": {
+        "OS": "iOS 15",
+        "chipSet": "Apple A15 Bionic",
+        "cpu": "Hexa-core (2x3.22 GHz + 4xX.X GHz)",
+        "gpu": "Apple GPU"
+      },
+      "memory": {
+        "ram": ["6GB"],
+        "storage": ["128GB", "256GB", "512GB", "1TB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "12 MP"
+      },
+      "battery": {
+        "capacity": "Li-Ion 3240 mAh",
+        "charging": "Fast charging 20W"
+      }
+    },
+    "imageUrl": "/assets/iphone13.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:26:17.844Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614def71a719b8fe5439dc22"
+    },
+    "name": "Samsung Galaxy S21 Ultra",
+    "brand": "Samsung",
+    "type": "smartphone",
+    "price": 1140,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-01-14T00:00:00Z"
+      },
+      "display": {
+        "type": "Dynamic AMOLED 2X",
+        "size": "6.8 inches",
+        "resolution": "1440 x 3200"
+      },
+      "platform": {
+        "OS": "Android 11",
+        "chipSet": "Exynos 2100, Qualcomm SM8350",
+        "cpu": "Octa-core (1x2.9 GHz Cortex-X1 & 3x2.80 GHz Cortex-A78 & 4x2.2 GHz Cortex-A55) ",
+        "gpu": "Mali-G78 MP14"
+      },
+      "memory": {
+        "ram": ["12GB", "16GB"],
+        "storage": ["128GB", "256GB", "512GB"]
+      },
+      "camera": {
+        "main": "108 MP",
+        "selfie": "40 MP"
+      },
+      "battery": {
+        "capacity": "Li-Ion 5000 mAh",
+        "charging": "Fast charging 25W"
+      }
+    },
+    "imageUrl": "/assets/samsungS21Ultra.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:32:01.706Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614df099a719b8fe5439dc25"
+    },
+    "name": "Sony Xperia 10 III Lite",
+    "brand": "Sony",
+    "type": "smartphone",
+    "price": 370,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-08-20T00:00:00Z"
+      },
+      "display": {
+        "type": "OLED",
+        "size": "6.0 inches",
+        "resolution": "1080 x 2520"
+      },
+      "platform": {
+        "OS": "Android 11",
+        "chipSet": "Qualcomm SM6350 Snapdragon 690",
+        "cpu": "Octa-core (2x2.0 GHz Kryo 560 Gold & 6x1.7 GHz Kryo 560 Silver)",
+        "gpu": "Adreno 619"
+      },
+      "memory": {
+        "ram": ["6GB"],
+        "storage": ["64GB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "8 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 4500 mAh",
+        "charging": "Fast charging 30W"
+      }
+    },
+    "imageUrl": "/assets/sony-xperia-10-iii-lite.jpg",
+    "createdAt": {
+      "$date": "2021-09-24T15:36:57.112Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614df1b6a719b8fe5439dc2b"
+    },
+    "name": "Samsung Galaxy S21 plus",
+    "brand": "Samsung",
+    "type": "smartphone",
+    "price": 949,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-01-14T00:00:00Z"
+      },
+      "display": {
+        "type": "Dynamic AMOLED 2X",
+        "size": "6.7 inches",
+        "resolution": "1080 x 2400"
+      },
+      "platform": {
+        "OS": "Android 11",
+        "chipSet": "Exynos 2100",
+        "cpu": "Octa-core (1x2.9 GHz Cortex-X1 & 3x2.80 GHz Cortex-A78 & 4x2.2 GHz Cortex-A55)",
+        "gpu": "Mali-G78 MP14"
+      },
+      "memory": {
+        "ram": ["8GB"],
+        "storage": ["128GB", "256GB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "10 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 4800 mAh",
+        "charging": "Fast charging 25W"
+      }
+    },
+    "imageUrl": "/assets/S21plus.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:41:42.422Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614df49dd85ad1a00fe9b70e"
+    },
+    "name": "Samsung Galaxy Z Fold3",
+    "brand": "Samsung",
+    "type": "smartphone",
+    "price": 1799,
+    "specs": {
+      "releaseDate": {
+        "$date": "2021-08-11T00:00:00Z"
+      },
+      "display": {
+        "type": "Foldable Dynamic AMOLED 2X",
+        "size": "7.6 inches",
+        "resolution": "1768 x 2208"
+      },
+      "platform": {
+        "OS": "Android 11",
+        "chipSet": "Qualcomm SM8350 Snapdragon 888 5G",
+        "cpu": "Octa-core (1x2.84 GHz Kryo 680 & 3x2.42 GHz Kryo 680 & 4x1.80 GHz Kryo 680)",
+        "gpu": "Adreno 660"
+      },
+      "memory": {
+        "ram": ["12GB"],
+        "storage": ["256GB", "512GB"]
+      },
+      "camera": {
+        "main": "12 MP",
+        "selfie": "4 MP"
+      },
+      "battery": {
+        "capacity": "Li-Po 4400 mAh",
+        "charging": "Fast charging 25W"
+      }
+    },
+    "imageUrl": "/assets/samsung_fold_z3.png",
+    "createdAt": {
+      "$date": "2021-09-24T15:54:05.206Z"
+    },
+    "__v": 0
+  }
+]

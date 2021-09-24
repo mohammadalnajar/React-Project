@@ -50,7 +50,7 @@ export const SmallScreenFilters = ({ devices, setDevices, devicesGlobal }) => {
           id='panel2bh-header'
         >
           <Typography sx={{ width: '100%', flexShrink: 0 }}>
-            Brand Filter
+            Os Filter
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -72,7 +72,7 @@ export const SmallScreenFilters = ({ devices, setDevices, devicesGlobal }) => {
           id='panel3bh-header'
         >
           <Typography sx={{ width: '100%', flexShrink: 0 }}>
-            Brand Filter
+            Price Filter
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

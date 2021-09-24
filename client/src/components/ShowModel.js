@@ -19,7 +19,6 @@ export const ShowModel = ({
         style={{
           backgroundColor: priColor,
           color: secColor,
-          //   maxHeight: '300px',
         }}
         className='show-model px-5'
       >
