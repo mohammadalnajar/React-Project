@@ -9,7 +9,7 @@ export const LogoutButton = ({ classes }) => {
     <>
       <Button
         onClick={() => logoutHandler()}
-        className={`${classes.button} btn`}
+        className={`${classes.button} button`}
         startIcon={<LogoutIcon />}
       >
         Log out
