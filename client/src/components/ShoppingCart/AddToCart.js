@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../context/global/GlobalContext';
+import { GlobalContext } from '../../context/global/GlobalContext';
 import { Grid } from '@material-ui/core';
 import { useSnackbar } from 'notistack';
 export const AddToCart = ({

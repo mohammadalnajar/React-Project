@@ -42,7 +42,6 @@ export const LoginForm = ({ loginHandler, status, resetError }) => {
 
   const submitForm = async (e) => {
     const res = await loginHandler(e, email, password);
-    console.log(res, 'in submit form');
     if (res.loggedIn) {
       setLocalStatus(true);
     } else {

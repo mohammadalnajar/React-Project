@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
+import { ShoppingCartList } from '../components/ShoppingCart/ShoppingCartList';
 import { Header } from '../components/Header';
 import { Grid } from '@material-ui/core';
 

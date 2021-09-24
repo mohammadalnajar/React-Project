@@ -1,6 +1,6 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
-import { AddToCart } from './AddToCart';
+import { AddToCart } from './ShoppingCart/AddToCart';
 import '../Styles/ShowModel.css';
 export const ShowModel = ({
   priColor,

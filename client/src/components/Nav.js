@@ -1,6 +1,6 @@
 import { Grid, Button } from '@material-ui/core';
 import React, { useContext } from 'react';
-import { ShoppingCart } from './ShoppingCart';
+import { ShoppingCart } from './ShoppingCart/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { LogoutButton } from './LogoutButton';
 import { LoginButton } from './LoginButton';
@@ -16,12 +16,12 @@ export const Nav = () => {
         <ul className='nav-list'>
           <li>
             <Link to='/' className={classes.link}>
-              <Button className={`${classes.btn} btn`}>Home</Button>
+              <Button className={`${classes.button} button`}>Home</Button>
             </Link>
           </li>
           <li>
             <Link className={classes.link} to='Shop'>
-              <Button className={`${classes.btn} btn`}>Shop</Button>
+              <Button className={`${classes.button} button`}>Shop</Button>
             </Link>
           </li>
         </ul>

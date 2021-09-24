@@ -3,8 +3,11 @@ import React from 'react';
 import { BrandFilter } from './BrandFilter';
 import { OsFilter } from './OsFilter';
 import { PriceFilter } from './PriceFilter';
-
-export const FilterItems = ({ devices, setDevices, devicesGlobal }) => {
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+export const BigScreenFilters = ({ devices, setDevices, devicesGlobal }) => {
+  const theme = useTheme();
+  const bigScreen = useMediaQuery(theme.breakpoints.up('sm'));
   return (
     <>
       <Grid container>
@@ -13,6 +16,7 @@ export const FilterItems = ({ devices, setDevices, devicesGlobal }) => {
             devices={devices}
             setDevices={setDevices}
             devicesGlobal={devicesGlobal}
+            bigScreen={bigScreen}
           />
         </Grid>
         <Grid item xs={12}>
@@ -20,6 +24,7 @@ export const FilterItems = ({ devices, setDevices, devicesGlobal }) => {
             devices={devices}
             setDevices={setDevices}
             devicesGlobal={devicesGlobal}
+            bigScreen={bigScreen}
           />
         </Grid>
         <Grid item xs={12}>
@@ -27,6 +32,7 @@ export const FilterItems = ({ devices, setDevices, devicesGlobal }) => {
             devices={devices}
             setDevices={setDevices}
             devicesGlobal={devicesGlobal}
+            bigScreen={bigScreen}
           />
         </Grid>
       </Grid>

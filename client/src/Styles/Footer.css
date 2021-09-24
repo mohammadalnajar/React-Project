@@ -6,3 +6,10 @@
   font-family: 'tele-bold';
   background-color: #f8e224;
 }
+.social-icon {
+  position: absolute;
+  margin-top: auto;
+  bottom: 40px;
+  left: 10px;
+  padding: 10px 0;
+}

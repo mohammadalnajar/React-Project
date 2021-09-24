@@ -5,11 +5,11 @@ import { styled } from '@mui/material/styles';
 
 import IconButton from '@mui/material/IconButton';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-import { GlobalContext } from '../context/global/GlobalContext';
-import { ShoppingCartList } from '../containers/ShoppingCart/ShoppingCartList';
-import '../Styles/ShoppingCart.css';
+import { GlobalContext } from '../../context/global/GlobalContext';
+import { ShoppingCartList } from './ShoppingCartList';
+import '../../Styles/ShoppingCart.css';
 import { useHistory } from 'react-router-dom';
-// import ClickAwayListener from '@mui/material/ClickAwayListener';
+
 export const ShoppingCart = () => {
   const { shoppingCartItems } = useContext(GlobalContext);
 

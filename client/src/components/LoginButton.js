@@ -24,7 +24,10 @@ export const LoginButton = ({ page }) => {
               Please Login to Pay
             </button>
           ) : (
-            <Button className={`${classes.btn} btn`} startIcon={<LoginIcon />}>
+            <Button
+              className={`${classes.button} button`}
+              startIcon={<LoginIcon />}
+            >
               Log in
             </Button>
           )}

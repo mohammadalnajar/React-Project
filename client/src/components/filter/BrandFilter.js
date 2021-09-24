@@ -6,12 +6,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Grid } from '@material-ui/core';
 
-export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
-  const operationSystems = [
-    ...new Set(devicesGlobal.map((device) => device.specs.platform.OS)),
-  ];
+export const BrandFilter = ({
+  devices,
+  setDevices,
+  devicesGlobal,
+  bigScreen,
+}) => {
+  // to get unique array values
+  const brands = [...new Set(devicesGlobal.map((device) => device.brand))];
   const [checked, setChecked] = useState([]);
-
   const handleChange = (e) => {
     if (e.target.checked) {
       setChecked((prev) => {
@@ -26,7 +29,7 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
 
   useEffect(() => {
     const filteredDevices = devicesGlobal.filter((device) =>
-      checked.includes(device.specs.platform.OS)
+      checked.includes(device.brand)
     );
     setDevices(filteredDevices);
     if (checked.length < 1) {
@@ -36,13 +39,13 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
   return (
     <>
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
-        <FormLabel>OS:</FormLabel>
+        {bigScreen ? <FormLabel>Brand:</FormLabel> : ''}
         <FormGroup>
           <Grid container alignItems='center' justifyContent='center'>
-            {operationSystems.length > 0 &&
-              operationSystems.map((os) => (
+            {brands.length > 0 &&
+              brands.map((brand) => (
                 <Grid
-                  key={os}
+                  key={brand}
                   container
                   alignItems='center'
                   justifyContent='center'
@@ -59,12 +62,12 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
                           }}
                           size='small'
                           onChange={handleChange}
-                          name={os}
-                          value={os}
+                          name={brand}
+                          value={brand}
                         />
                       }
-                      label={os}
-                    />{' '}
+                      label={brand}
+                    />
                   </Grid>
                   <Grid
                     item
@@ -75,7 +78,7 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
                   >
                     {
                       devicesGlobal.filter((device) => {
-                        return device.specs.platform.OS === os;
+                        return device.brand === brand;
                       }).length
                     }
                   </Grid>

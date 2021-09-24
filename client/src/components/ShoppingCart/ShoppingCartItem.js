@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core';
 import React, { useContext } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
-import { GlobalContext } from '../context/global/GlobalContext';
+import { GlobalContext } from '../../context/global/GlobalContext';
 import { useSnackbar } from 'notistack';
 
 export const ShoppingCartItem = ({ item }) => {
