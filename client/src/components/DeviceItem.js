@@ -9,7 +9,7 @@ import { DeviceInfo } from './DeviceInfo';
 export const DeviceItem = ({ device }) => {
   const classes = useStyles();
   return (
-    <Grid className='device' item xs={12} md={6} lg={4}>
+    <Grid className='device' item xs={12} sm={6} lg={4}>
       <Grid className={`${classes.deviceContainer} m-2  p-2`}>
         <Grid container style={{ minHeight: '330px' }}>
           <Grid item xs={12} container justifyContent='center'>
