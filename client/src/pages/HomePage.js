@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { ShowModel } from '../components/ShowModel';
 import { GlobalContext } from '../context/global/GlobalContext';
-import iphone13img from '../assets/images/iphone_13.png';
 import { Grid } from '@material-ui/core';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -30,12 +29,25 @@ export const HomePage = (props) => {
                   priColor='#21333C'
                   secColor='#F8E224'
                   thrColor='#FFFFFF'
-                  imageUrl={iphone13img}
+                  imageUrl={device.imageUrl}
                   device={device}
                 />
               );
             } else if (
-              device.name.toLowerCase().trim() === 'samsung s21 plus'
+              device.name.toLowerCase().trim() === 'samsung galaxy s21 plus'
+            ) {
+              return (
+                <ShowModel
+                  key={device._id}
+                  priColor='#F5F5F5'
+                  secColor='#57AEE4'
+                  thrColor='#000000'
+                  imageUrl={device.imageUrl}
+                  device={device}
+                />
+              );
+            } else if (
+              device.name.toLowerCase().trim() === 'samsung galaxy z fold3'
             ) {
               return (
                 <ShowModel
@@ -47,18 +59,8 @@ export const HomePage = (props) => {
                   device={device}
                 />
               );
-            } else if (device.name.toLowerCase().trim() === 'iphone 12 pro') {
-              return (
-                <ShowModel
-                  key={device._id}
-                  priColor='#F5F5F5'
-                  secColor='#57AEE4'
-                  thrColor='#000000'
-                  imageUrl={device.imageUrl}
-                  device={device}
-                />
-              );
             }
+            return false;
           })}
         <ScrollTop {...props}>
           <Fab color='secondary' size='small' aria-label='scroll back to top'>
