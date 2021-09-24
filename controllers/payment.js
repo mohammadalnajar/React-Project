@@ -1,6 +1,4 @@
-const keys = require('../config/keys');
-
-const stripe = require('stripe')(keys.STRIPE_PRIVATE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 
 exports.paymentHandle = async (req, res) => {
   const purchasedItems = req.body.map((item) => {
@@ -20,8 +18,8 @@ exports.paymentHandle = async (req, res) => {
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: purchasedItems,
-      success_url: `${keys.STRIPE_SUCCESS_URL}/success`,
-      cancel_url: `${keys.STRIPE_CANCEL_URL}/cart`,
+      success_url: `${process.env.STRIPE_SUCCESS_URL}/success`,
+      cancel_url: `${process.env.STRIPE_CANCEL_URL}/cart`,
     });
     res.json({ url: session.url });
   } catch (error) {

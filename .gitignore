@@ -31,3 +31,4 @@ req.rest
 .vscode
 
 test.js
+.env
