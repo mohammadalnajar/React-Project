@@ -6,10 +6,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Grid } from '@material-ui/core';
 
-export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
+export const BrandFilter = ({
+  devices,
+  setDevices,
+  devicesGlobal,
+  bigScreen,
+}) => {
+  // to get unique array values
   const brands = [...new Set(devicesGlobal.map((device) => device.brand))];
   const [checked, setChecked] = useState([]);
-
   const handleChange = (e) => {
     if (e.target.checked) {
       setChecked((prev) => {
@@ -34,7 +39,7 @@ export const BrandFilter = ({ devices, setDevices, devicesGlobal }) => {
   return (
     <>
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
-        <FormLabel>Brand:</FormLabel>
+        {bigScreen ? <FormLabel>Brand:</FormLabel> : ''}
         <FormGroup>
           <Grid container alignItems='center' justifyContent='center'>
             {brands.length > 0 &&

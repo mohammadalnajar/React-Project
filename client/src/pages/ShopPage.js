@@ -24,6 +24,7 @@ export const ShopPage = (props) => {
   return (
     <>
       <Header page='ShopPage' />
+      {/* when scroll reach this component the scrolToTop tool will show up */}
       <Toolbar
         id='back-to-top-anchor'
         style={{ maxHeight: '0px', minHeight: '0px' }}
@@ -36,7 +37,7 @@ export const ShopPage = (props) => {
             container
             item
             xs={bigScreen ? 9 : 12}
-            justifyContent='center'
+            justifyContent={bigScreen ? 'flex-start' : 'center'}
             alignItems='flex-start'
           >
             <SearchBar
@@ -47,7 +48,7 @@ export const ShopPage = (props) => {
           </Grid>
         </Grid>
         <Grid container item xs={12}>
-          <Grid item xs={bigScreen ? 3 : 12}>
+          <Grid item xs={bigScreen ? 3 : 12} className='px-2'>
             <FilterItems
               devices={devices}
               setDevices={setDevices}

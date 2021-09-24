@@ -6,7 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Grid } from '@material-ui/core';
 
-export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
+export const OsFilter = ({ devices, setDevices, devicesGlobal, bigScreen }) => {
   const operationSystems = [
     ...new Set(devicesGlobal.map((device) => device.specs.platform.OS)),
   ];
@@ -36,7 +36,7 @@ export const OsFilter = ({ devices, setDevices, devicesGlobal }) => {
   return (
     <>
       <FormControl component='fieldset' sx={{ m: 3 }} variant='standard'>
-        <FormLabel>OS:</FormLabel>
+        {bigScreen ? <FormLabel>OS:</FormLabel> : ''}
         <FormGroup>
           <Grid container alignItems='center' justifyContent='center'>
             {operationSystems.length > 0 &&
