@@ -56,7 +56,7 @@
 - **bycrpt**: to hash passwords before saving them on database.
 - **Material ui**: for Design.
 #### APIs:
-- Strip API for payments.
+- Stripe API for payments.
 ___
 ### Test account:
 
@@ -89,7 +89,7 @@ In case you want to run the app on your **local machine** follow the next steps 
    include the database name in the mongodb_url)***
 5. Create collection and name it as `Devices`   
 6. Import the `ExampleDevices.json` into your `Devices` collection. 
-7.  Finally lunch the app by running => `npm run dev`
+7.  Finally launch the app by running => `npm run dev`
    
 ### And that's it, the app now should run successfully on your machine.
 ____
