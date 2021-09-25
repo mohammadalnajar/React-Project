@@ -5,29 +5,36 @@
 #### The app consists of the following parts:
 
 1. **Home page** with show modals
+
    <img src='assets/readME/homepage.png'>
+   
 2. **Shop page** where your find all devices available in our database with
    filters on brand/os/price and autoComplete search field; and popover to show
    the device specs ; notifications show up when item added to cart or removed
    from cart.
-   <div style="display: flex;justify-content:space-around">
-      <img src='assets/readME/shopPageFilter1.png' width='400px'>
-      <img src='assets/readME/shopPageFilter2.png' width='400px'>
-      
+   
+   
+   <div style="display: flex; flex-wrap:wrap">
+      <img src='assets/readME/shopPageFilter1.png' style="max-width=450px; height:260px">
+      <img src='assets/readME/shopPageFilter2.png'style="width=450px; height:260px">
+      <img src='assets/readME/shopPageDetails.png'style="width=300px; height:260px">
+      <img src='assets/readME/notifications.png'style="width=300px; height:260px">
    </div>
-   <div style="display: flex;justify-content:space-around">
-      <img src='assets/readME/shopPageDetails.png' width='400px'>
-      <img src='assets/readME/notifications.png' width='400px'>
-   </div>
-
+   
+   
 3.  **Check out page** where you can pay using a credit card using Stripe API.
+
       <img src='assets/readME/checkoutPage.png' width='600px'>
+      
 4.  **Sing up page** to register your information in our database.
 5.  **Sing in page**.
+
+
    <div style="display: flex;justify-content:space-around">
       <img src='assets/readME/signIn.png' width='400px'>
       <img src='assets/readME/signUp.png' width='400px'>
    </div>
+
 
 6. The App is mobile ***Responsive*** which means everything will fit well at small
    screens as well.
@@ -64,10 +71,8 @@ In case you want to run the app on your **local machine** follow the next steps 
 ### Run these commands in your terminal:
 
 1. `cd react-project`
-2. `npm install `
-3. `cd client`
-4. `npm install`
-5. In the config folder you will find `example.env` file, first you should
+2. `npm run setup` to install npm for backend and frontend
+3. In the config folder you will find `example.env` file, first you should
    rename it to `.env` and then include your mongoDB key and Stripe key as
    shown in the next Example:
 
@@ -80,12 +85,11 @@ In case you want to run the app on your **local machine** follow the next steps 
     STRIPE_CANCEL_URL='http://localhost:3000'
 
    ```
-6. In your mongoDB Atlas create a database called react-project ***(don't forget to
+4. In your mongoDB Atlas create a database called react-project ***(don't forget to
    include the database name in the mongodb_url)***
-7. Create collection and name it as `Devices`   
-8. Import the `ExampleDevices.json` into your `Devices` collection. 
-9. Go back to your terminal and run `cd ../` to go to the root folder.
-10. Finally lunch the app by running => `npm run dev`
+5. Create collection and name it as `Devices`   
+6. Import the `ExampleDevices.json` into your `Devices` collection. 
+7.  Finally lunch the app by running => `npm run dev`
    
 ### And that's it, the app now should run successfully on your machine.
 ____
