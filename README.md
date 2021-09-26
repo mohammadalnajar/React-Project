@@ -71,8 +71,9 @@ In case you want to run the app on your **local machine** follow the next steps 
 ### Run these commands in your terminal:
 
 1. `cd react-project`
-2. `npm run setup` to install npm for backend and frontend
-3. In the config folder you will find `example.env` file, first you should
+2. `npm install concurrently`
+3. `npm run setup` to install npm for backend and frontend
+4. In the config folder you will find `example.env` file, first you should
    rename it to `.env` and then include your mongoDB key and Stripe key as
    shown in the next Example:
 
